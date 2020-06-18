@@ -18,7 +18,7 @@ const generateSampleData = (numberOfDataToGenerate, keys) => {
       if (title === 'hotelName') {
         obj[title] = randomHotelName;
       } else if(title === 'roomsTotal') {
-        obj[title] = Math.floor(random(25, 150));
+        obj[title] = Math.floor(45 + Math.random() * (145 - 45));
       } else {
         obj[title] = Math.floor(random(120, 280));
       }
@@ -26,6 +26,7 @@ const generateSampleData = (numberOfDataToGenerate, keys) => {
 
     sampleData.push(obj);
   }
+  console.log(sampleData)
   return sampleData;
 }
 
@@ -33,18 +34,18 @@ module.exports = {
   generateSampleData
 }
 
-// generateSampleData(10, [
-//   'hotelName',
-//   'roomsTotal',
-//   'cheapTicketsPrice',
-//   'travelocityPrice',
-//   'expediaPrice',
-//   'bookingPrice',
-//   'orbitzPrice',
-//   'hotelsPrice',
-//   'lolTravelprice',
-//   'snapTravelPrice',
-//   'priceLinePrice',
-//   'eDreamsPrice'
-// ])
+generateSampleData(20, [
+  'hotelName',
+  'roomsTotal',
+  'cheapTicketsPrice',
+  'travelocityPrice',
+  'expediaPrice',
+  'bookingPrice',
+  'orbitzPrice',
+  'hotelsPrice',
+  'lolTravelprice',
+  'snapTravelPrice',
+  'priceLinePrice',
+  'eDreamsPrice'
+])
 
