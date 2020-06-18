@@ -14,11 +14,11 @@ const generateSampleData = (numberOfDataToGenerate, keys) => {
     let randomHotelName = faker.random.word();
     randomHotelName = randomHotelName.split(' ').shift();
     randomHotelName = `${randomHotelName.slice(0,1).toUpperCase() + randomHotelName.slice(1)} Hotel`;
-    arr.forEach((title, i, list) =>{
+    arr.forEach((title) =>{
       if (title === 'hotelName') {
         obj[title] = randomHotelName;
       } else if(title === 'roomsTotal') {
-        obj[title] = obj['roomsTotal'] = Math.floor(random(25, 150));
+        obj[title] = Math.floor(random(25, 150));
       } else {
         obj[title] = Math.floor(random(120, 280));
       }
