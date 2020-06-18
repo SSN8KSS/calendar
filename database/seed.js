@@ -1,4 +1,4 @@
-const faker = require('faker')
+const faker = require('faker');
 
 const random = (min, max) => {
   const temp = min + Math.random() * (max - min);
@@ -27,6 +27,10 @@ const generateSampleData = (numberOfDataToGenerate, keys) => {
     sampleData.push(obj);
   }
   return sampleData;
+}
+
+module.exports = {
+  generateSampleData
 }
 
 // generateSampleData(10, [
