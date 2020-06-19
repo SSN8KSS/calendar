@@ -1,7 +1,5 @@
 const faker = require('faker');
 const database = require('./index.js');
-// const HotelClass = require('./index.js');
-
 
 const random = (min, max) => {
   const temp = min + Math.random() * (max - min);
