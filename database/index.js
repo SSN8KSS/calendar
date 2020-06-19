@@ -7,7 +7,7 @@ const db = mongoose.connection;
 //Test connection
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('DB connected')
+  console.log('DB connected');
 });
 //
 
@@ -28,9 +28,9 @@ const hotelSchema = new mongoose.Schema({
   snapTravelPrice: Number,
   priceLinePrice: Number,
   eDreamsPrice: Number
-})
+});
 
 const HotelClass = mongoose.model('Hotels', hotelSchema);
 
-exports.model = HotelClass;
-exports.connection = db;
+module.exports.model = HotelClass;
+module.exports.connection = db;
