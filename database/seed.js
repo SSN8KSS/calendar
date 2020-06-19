@@ -1,6 +1,6 @@
 const faker = require('faker');
-const db = require('./index.js');
-const HotelClass = require('./index.js');
+const database = require('./index.js');
+// const HotelClass = require('./index.js');
 
 
 const random = (min, max) => {
@@ -48,9 +48,10 @@ const generatedData = generateSampleData(100, [
 ])
 
 const insertSampleData = function(data) {
-  HotelClass.create(data)
+  database.model.create(data)
     .then((result) => {
       console.log(`Data insertion SUCCESS. ${result.length} items inserted.`);
+      database.connection.close();
     })
     .catch((err) => console.log('Data insertion FAILED.', err));
 };
