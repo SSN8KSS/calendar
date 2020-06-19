@@ -8,3 +8,7 @@ app.listen(port, ()=>{console.log(`App listening on http://localhost:${port}`)})
 
 app.use(morgan('dev'));
 app.use(parser.urlencoded({extended:true}))
+
+app.get('/api/calendar/:hotelId', (req,res)=>{
+  res.status(200).send(req.params)
+})
