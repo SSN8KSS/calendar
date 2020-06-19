@@ -1,4 +1,7 @@
 const faker = require('faker');
+const db = require('./index.js');
+const HotelClass = require('./index.js');
+
 
 const random = (min, max) => {
   const temp = min + Math.random() * (max - min);
@@ -26,15 +29,10 @@ const generateSampleData = (numberOfDataToGenerate, keys) => {
 
     sampleData.push(obj);
   }
-  console.log(sampleData)
   return sampleData;
 }
 
-module.exports = {
-  generateSampleData
-}
-
-generateSampleData(20, [
+const generatedData = generateSampleData(20, [
   'hotelName',
   'roomsTotal',
   'cheapTicketsPrice',
@@ -49,3 +47,12 @@ generateSampleData(20, [
   'eDreamsPrice'
 ])
 
+const insertSampleData = function(data) {
+  HotelClass.create(data)
+    .then((result) => {
+      console.log('Data insertion SUCCESS');
+    })
+    .catch((err) => console.log('Data insertion FAILED', err));
+};
+
+insertSampleData(generatedData);
