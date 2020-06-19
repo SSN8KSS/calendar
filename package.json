@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "eslint": "^7.2.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "eslint-plugin-react": "^7.20.0"
   }
 }
