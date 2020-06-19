@@ -1,14 +1,15 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
+  "name": "calendar-component",
+  "version": "1.0.0",
+  "description": "calendar component of hotel Item Detail Page",
+  "author": "Andrey Petunin",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
     "start": "nodemon server/index.js"
+    "db-seed": "node database/seed.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

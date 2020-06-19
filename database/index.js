@@ -25,12 +25,12 @@ const hotelSchema = new mongoose.Schema({
   orbitzPrice: Number,
   hotelsPrice: Number,
   lolTravelprice: Number,
-  snapTravelPrice: Number
+  snapTravelPrice: Number,
+  priceLinePrice: Number,
+  eDreamsPrice: Number
 })
 
 const HotelClass = mongoose.model('Hotels', hotelSchema);
 
-module.exports = {
-  db
-}
-
+exports.model = HotelClass;
+exports.connection = db;
