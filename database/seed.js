@@ -32,7 +32,7 @@ const generateSampleData = (numberOfDataToGenerate, keys) => {
   return sampleData;
 }
 
-const generatedData = generateSampleData(20, [
+const generatedData = generateSampleData(100, [
   'hotelName',
   'roomsTotal',
   'cheapTicketsPrice',
@@ -50,9 +50,9 @@ const generatedData = generateSampleData(20, [
 const insertSampleData = function(data) {
   HotelClass.create(data)
     .then((result) => {
-      console.log('Data insertion SUCCESS');
+      console.log(`Data insertion SUCCESS. ${result.length} items inserted.`);
     })
-    .catch((err) => console.log('Data insertion FAILED', err));
+    .catch((err) => console.log('Data insertion FAILED.', err));
 };
 
 insertSampleData(generatedData);
