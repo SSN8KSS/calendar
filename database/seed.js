@@ -1,49 +1,49 @@
 const faker = require('faker');
 const database = require('./index.js');
+const moment = require('moment');
 
-const random = (min, max) => {
+const randomPrice = (min, max) => {
   const temp = min + Math.random() * (max - min);
   return temp < min * 1.1 || temp > max * 0.9 ? null : temp;
 };
 
-const generateSampleData = (numberOfDataToGenerate, keys) => {
+const randomIsBooked = () => {
+  const temp = Math.random();
+  return temp >= 0.5 ? true : false;
+};
+
+const generateSampleData = (numberOfDataToGenerate) => {
   const sampleData = [];
-  const arr = keys;
+  const serviceList = ['Hotels.com', 'Expedia.com', 'Snaptravel', 'Booking.com', 'Travelocity', 'Orbitz.com', 'CheapTickets', 'Priceline', 'travelup.com', 'Tripadvisor'];
 
   for (var i = 1; i <= numberOfDataToGenerate; i++) {
     let obj = {'id': i};
     let randomHotelName = faker.random.word();
     randomHotelName = randomHotelName.split(' ').shift();
     randomHotelName = `${randomHotelName.slice(0, 1).toUpperCase() + randomHotelName.slice(1)} Hotel`;
-    arr.forEach((title) =>{
-      if (title === 'hotelName') {
-        obj[title] = randomHotelName;
-      } else if (title === 'roomsTotal') {
-        obj[title] = Math.floor(45 + Math.random() * (145 - 45));
-      } else {
-        obj[title] = Math.floor(random(120, 280));
-      }
-    });
-
+    obj['hotelName'] = randomHotelName;
+    obj['roomsTotal'] = Math.floor(45 + Math.random() * (145 - 45));
+    obj['maxGuestPerRoom'] = Math.floor(2 + Math.random() * (8 - 2));
+    obj['vacancy'] = [];
+    for (var k = 0; k < 366; k++) {
+      let entity = {};
+      entity['date'] = moment('2020-01-01').add(k, 'days').format('YYYY-MM-DD');
+      entity['isBooked'] = randomIsBooked();
+      obj['vacancy'].push(entity);
+    }
+    obj['prices'] = [];
+    for (var j = 0; j < serviceList.length; j++) {
+      let item = {};
+      item['serviceName'] = serviceList[j];
+      item['price'] = Math.floor(randomPrice(120, 290));
+      obj['prices'].push(item);
+    }
     sampleData.push(obj);
   }
   return sampleData;
 };
 
-const generatedData = generateSampleData(100, [
-  'hotelName',
-  'roomsTotal',
-  'cheapTicketsPrice',
-  'travelocityPrice',
-  'expediaPrice',
-  'bookingPrice',
-  'orbitzPrice',
-  'hotelsPrice',
-  'lolTravelprice',
-  'snapTravelPrice',
-  'priceLinePrice',
-  'eDreamsPrice'
-]);
+const generatedData = generateSampleData(100);
 
 const insertSampleData = function(data) {
   database.model.create(data)

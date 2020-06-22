@@ -18,16 +18,9 @@ const hotelSchema = new mongoose.Schema({
   },
   hotelName: String,
   roomsTotal: Number,
-  cheapTicketsPrice: Number,
-  travelocityPrice: Number,
-  expediaPrice: Number,
-  bookingPrice: Number,
-  orbitzPrice: Number,
-  hotelsPrice: Number,
-  lolTravelprice: Number,
-  snapTravelPrice: Number,
-  priceLinePrice: Number,
-  eDreamsPrice: Number
+  maxGuestPerRoom: Number,
+  vacancy: [ {date: String, isBooked: Boolean} ],
+  prices: [ {serviceName: String, price: Number} ]
 });
 
 const HotelClass = mongoose.model('Hotels', hotelSchema);
