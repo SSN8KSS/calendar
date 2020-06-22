@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "db-seed": "node database/seed.js",
-    "lint": "eslint . --ext .js --fix"
+    "lint": "eslint client --ext .jsx server --ext .js database --ext .js --fix",
+    "react-dev": "webpack -d --watch"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -20,9 +21,17 @@
     "moment": "^2.27.0",
     "mongoose": "^5.9.19",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "eslint-plugin-react": "^7.20.0"
   }
