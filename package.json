@@ -10,7 +10,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "db-seed": "node database/seed.js",
-    "lint": "eslint . --ext .js --fix",
+    "lint": "eslint client --ext .jsx server --ext .js database --ext .js --fix",
     "react-dev": "webpack -d --watch"
   },
   "dependencies": {

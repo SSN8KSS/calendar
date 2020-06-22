@@ -10,6 +10,8 @@ app.listen(port, () => console.log(`App listening on http://localhost:${port}`))
 app.use(morgan('dev'));
 app.use(parser.urlencoded({extended: true}));
 
+app.use(express.static('public'));
+
 app.get('/api/calendar/:hotelId', (req, res) => {
   const q = req.params.hotelId;
   db.model.find({id: q}, (err, data) => {
