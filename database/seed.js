@@ -25,14 +25,14 @@ const generateSampleData = (numberOfDataToGenerate) => {
     obj['roomsTotal'] = Math.floor(45 + Math.random() * (145 - 45));
     obj['maxGuestPerRoom'] = Math.floor(2 + Math.random() * (8 - 2));
     obj['vacancy'] = [];
-    for (var k = 0; k < 366; k++) {
+    for (let k = 0; k < 366; k++) {
       let entity = {};
       entity['date'] = moment('2020-01-01').add(k, 'days').format('YYYY-MM-DD');
       entity['isBooked'] = randomIsBooked();
       obj['vacancy'].push(entity);
     }
     obj['prices'] = [];
-    for (var j = 0; j < serviceList.length; j++) {
+    for (let j = 0; j < serviceList.length; j++) {
       let item = {};
       item['serviceName'] = serviceList[j];
       item['price'] = Math.floor(randomPrice(120, 290));
