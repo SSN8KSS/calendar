@@ -12,9 +12,15 @@ app.use(parser.urlencoded({extended: true}));
 
 app.use(express.static('public'));
 
-app.get('/api/calendar/:hotelId', (req, res) => {
-  const q = req.params.hotelId;
-  db.model.find({id: q}, (err, data) => {
+app.get('/api/calendar/:hotelIdOrName', (req, res) => {
+  let q = req.params.hotelIdOrName;
+  let parsed = parseInt(q);
+  if (parsed) {
+    search = {'id': q};
+  } else {
+    search = {'hotelName': {'$regex': q.slice(0, 1).toUpperCase() + q.slice(1)}};
+  }
+  db.model.find(search, (err, data) => {
     if (err) {
       console.log('DB QUERY ERROR', err);
       res.status(400).send();

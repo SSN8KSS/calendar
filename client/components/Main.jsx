@@ -18,6 +18,7 @@ class Main extends React.Component {
     axios.get('http://localhost:8080/api/calendar/94')
       .then((res) => {
         console.log('GET success');
+        console.log(res);
         this.setState({
           currentHotel: res.data
         });
