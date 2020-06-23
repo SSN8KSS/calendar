@@ -30,3 +30,5 @@ app.get('/api/calendar/:hotelIdOrName', (req, res) => {
     }
   });
 });
+
+module.exports = app;

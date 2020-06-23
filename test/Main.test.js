@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from '../client/components/Main.jsx';
-import { shallow, mount } from 'enzyme';
+// import { shallow, mount } from 'enzyme';
 
 describe('<Main/> component Testing', () => {
 
@@ -10,6 +10,10 @@ describe('<Main/> component Testing', () => {
   beforeEach(() => {
     wrapper = shallow(<Main />);
     instance = wrapper.instance();
+  });
+
+  it('<Main/> component renders properly', () => {
+    expect(wrapper.exists()).toBe(true);
   });
 
   it('<h5> element should exist', () => {
@@ -27,5 +31,10 @@ describe('<Main/> component Testing', () => {
   it('"currentHotel" state property should be an empty array', () => {
     expect(instance.state.currentHotel.length).toBe(0);
   });
+
+});
+
+describe('<Main component async Testing', () => {
+
 
 });
