@@ -1,7 +1,6 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Main from '../client/components/Main.jsx';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 describe('<Main/> component Testing', () => {
 
@@ -13,19 +12,19 @@ describe('<Main/> component Testing', () => {
     instance = wrapper.instance();
   });
 
-  test('should render 5 elements', () => {
-    expect(wrapper.children()).toHaveLength(5);
+  it('<h5> element should exist', () => {
+    expect(wrapper.find('h5').exists()).toBe(true);
   });
 
-  test('should have <h5> element with text', () => {
+  it('<h5> element should have text', () => {
     expect(wrapper.find('h5').text()).toContain('people currently viewing');
   });
 
-  test('should have "currentHotel" state property', ()=>{
+  it('should have "currentHotel" state property', () => {
     expect(instance.state.currentHotel).not.toBe(undefined);
   });
 
-  test('"currentHotel" state property should be an empty array', ()=>{
+  it('"currentHotel" state property should be an empty array', () => {
     expect(instance.state.currentHotel.length).toBe(0);
   });
 
