@@ -15,7 +15,7 @@ class Main extends React.Component {
   }
 
   componentDidMount () {
-    axios.get('http://localhost:8080/api/calendar/93')
+    axios.get('http://localhost:8080/api/calendar/94')
       .then((res) => {
         console.log('GET success');
         this.setState({
@@ -23,7 +23,7 @@ class Main extends React.Component {
         });
       })
       .catch((err) => {
-        console.log('GET failed', err);
+        // console.log('GET failed', err);
       });
   }
 
@@ -32,7 +32,7 @@ class Main extends React.Component {
     return (
       <div>
         <div>
-          <h5> 5 people currently viewing this hotel</h5>
+          <h5>5 people currently viewing this hotel</h5>
         </div>
         <div>
           <Calendar />
