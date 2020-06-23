@@ -8,7 +8,9 @@
     "node": ">=6.13.0"
   },
   "jest": {
-    "verbose": true
+    "setupFilesAfterEnv": [
+      "<rootDir>enzyme.config.js"
+    ]
   },
   "scripts": {
     "start": "nodemon server/index.js",
