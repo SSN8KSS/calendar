@@ -32,7 +32,7 @@ class Main extends React.Component {
     return (
       <div>
         <div>
-          <h5> 5 people currently viewing this hotel</h5>
+          <h5>5 people currently viewing this hotel</h5>
         </div>
         <div>
           <Calendar />

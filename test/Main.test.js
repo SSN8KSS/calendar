@@ -7,10 +7,16 @@ configure({ adapter: new Adapter() });
 
 describe('Main component Testing', () => {
 
-  test('should have a tag element with predefined text', () => {
-    const wrapper = shallow(<Main />);
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<Main />);
+  })
+
+  test('should have <h5> element with predefined text', () => {
     expect(wrapper.find('h5').text()).toContain('people currently viewing');
   });
+
 
 
 });
