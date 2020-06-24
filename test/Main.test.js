@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from '../client/components/Main.jsx';
-import { shallow, mount } from 'enzyme';
+
+jest.mock('../client/lib/getDataFromServer');
 
 describe('<Main/> component Testing', () => {
 
@@ -10,6 +11,10 @@ describe('<Main/> component Testing', () => {
   beforeEach(() => {
     wrapper = shallow(<Main />);
     instance = wrapper.instance();
+  });
+
+  it('<Main/> component should render properly', () => {
+    expect(wrapper.exists()).toBe(true);
   });
 
   it('<h5> element should exist', () => {
@@ -24,8 +29,8 @@ describe('<Main/> component Testing', () => {
     expect(instance.state.currentHotel).not.toBe(undefined);
   });
 
-  it('"currentHotel" state property should be an empty array', () => {
-    expect(instance.state.currentHotel.length).toBe(0);
+  it('"currentHotel" state property should be updated after componendDidMount called', () => {
+    expect(instance.state.currentHotel.length).toBe(1);
   });
 
 });

@@ -16,8 +16,9 @@
     "start": "nodemon server/index.js",
     "db-seed": "node database/seed.js",
     "lint": "eslint client --ext .jsx server --ext .js database --ext .js test --ext .js --fix",
-    "react-dev": "webpack -d --watch",
-    "test": "jest"
+    "react-dev": "webpack -d --watch --coverage",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -31,7 +32,8 @@
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
