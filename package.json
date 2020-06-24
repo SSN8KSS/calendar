@@ -16,7 +16,7 @@
     "start": "nodemon server/index.js",
     "db-seed": "node database/seed.js",
     "lint": "eslint client --ext .jsx server --ext .js database --ext .js test --ext .js --fix",
-    "react-dev": "webpack -d --watch --coverage",
+    "react-dev": "webpack -d --watch",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
   },
