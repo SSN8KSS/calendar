@@ -1,7 +1,4 @@
-import React from 'react';
 import Calendar from '../client/components/Calendar.jsx';
-import { shallow, mount } from 'enzyme';
-
 
 describe('<Calendar/> component Testing', () => {
 
@@ -10,7 +7,6 @@ describe('<Calendar/> component Testing', () => {
 
   beforeEach(() => {
     wrapper = shallow(<Calendar />);
-    instance = wrapper.instance();
   });
 
   it('<Calendar/> component renders properly', () => {
