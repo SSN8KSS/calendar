@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import Calendar from './Calendar.jsx';
-import Guests from './Guests.jsx';
-import BestDeals from './BestDeals.jsx';
-import AllDeals from './AllDeals.jsx';
-import getDataFromServer from '../lib/getDataFromServer.js';
+import Calendar from './components/Calendar.jsx';
+import Guests from './components/Guests.jsx';
+import BestDeals from './components/BestDeals.jsx';
+import AllDeals from './components/AllDeals.jsx';
+import getDataFromServer from './lib/getDataFromServer.js';
 
-class Main extends React.Component {
+class App extends React.Component {
   constructor (props) {
     super(props);
 
@@ -53,4 +53,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default App;

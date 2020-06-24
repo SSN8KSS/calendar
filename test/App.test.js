@@ -1,19 +1,19 @@
 import React from 'react';
-import Main from '../client/components/Main.jsx';
+import App from '../client/components/App.jsx';
 
 jest.mock('../client/lib/getDataFromServer');
 
-describe('<Main/> component Testing', () => {
+describe('<App/> component Testing', () => {
 
   let wrapper;
   let instance;
 
   beforeEach(() => {
-    wrapper = shallow(<Main />);
+    wrapper = shallow(<App />);
     instance = wrapper.instance();
   });
 
-  it('<Main/> component should render properly', () => {
+  it('<App/> component should render properly', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
