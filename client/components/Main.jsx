@@ -4,6 +4,7 @@ import Calendar from './Calendar.jsx';
 import Guests from './Guests.jsx';
 import BestDeals from './BestDeals.jsx';
 import AllDeals from './AllDeals.jsx';
+import getDataFromServer from '../lib/getDataFromServer.js';
 
 class Main extends React.Component {
   constructor (props) {
@@ -12,20 +13,20 @@ class Main extends React.Component {
     this.state = {
       currentHotel: []
     };
+    this.getData = this.getData.bind(this);
   }
 
   componentDidMount () {
-    axios.get('http://localhost:8080/api/calendar/94')
-      .then((res) => {
-        console.log('GET success');
-        console.log(res);
-        this.setState({
-          currentHotel: res.data
-        });
-      })
-      .catch((err) => {
-        // console.log('GET failed', err);
+    this.getData('digital');
+  }
+
+  getData (term) {
+    const response = getDataFromServer(term);
+    response.then((hotel) => {
+      this.setState({
+        currentHotel: hotel
       });
+    });
   }
 
   render () {
