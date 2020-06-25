@@ -14,6 +14,93 @@ class Calendar extends React.Component {
     this.prevMonth = this.prevMonth.bind(this);
   }
 
+  renderNavbar () {
+    const dateFormat = "MMMM yyyy";
+
+    return (
+      <div className="navbar-container">
+        <div className="col">
+          <button type="button">previous</button>
+        </div>
+
+        <div className="col">
+          <span>
+            {moment(this.state.currentMonth).format(dateFormat)}
+          </span>
+        </div>
+        <div className="col">
+          <span>
+            {moment(this.state.nextMonth).format(dateFormat)}
+          </span>
+        </div>
+
+        <div className="col">
+          <button type="button">previous</button>
+        </div>
+      </div>
+    );
+  }
+
+  renderWeekDays (term) {
+    const dateFormat = 'dddd';
+    const days = [];
+
+    let startDate;
+    term === 'current' ? startDate = moment(this.state.currentMonth).startOf('week') : startDate = moment(this.state.nextMonth).startOf('week');
+
+    for (var i = 0; i < 7; i++) {
+      days.push(
+        <div
+          key={i}>
+          {moment(startDate).add(i,'days').format(dateFormat)}
+        </div>);
+    }
+    return <div className="weekdays-row">{days}</div>;
+
+  }
+
+  renderCells (term) {
+    let currentMonth;
+    if (term === 'current') {
+      currentMonth = this.state.currentMonth;
+    } else {
+      currentMonth = this.state.nextMonth;
+    }
+    const selectedDate = this.state.selectedDate;
+    const dateFormat = 'D';
+    const monthStart = moment(currentMonth).startOf('month');
+    const monthEnd = moment(currentMonth).endOf('month');
+    const startDate = moment(monthStart).startOf('week');
+    const endDate = moment(monthEnd).endOf('week');
+
+    const rows = [];
+    let days = [];
+    let day = startDate;
+    let formattedDate = '';
+
+    while (day < endDate) {
+      for (let i = 0; i < 7; i++) {
+        formattedDate = moment(day).format(dateFormat);
+        const dayCopy = day;
+        days.push(
+          <div className="cell">
+            <span className="number">{formattedDate}</span>
+          </div>
+        );
+        day = moment(day).add(1, 'day');
+      }
+      rows.push(
+        <div
+          className="row"
+          key={day}>
+          {days}
+        </div>
+      );
+      days = [];
+    }
+    return <div className="body">{rows}</div>;
+  }
+
   onDateClick () {}
 
   nextMonth () {}
@@ -24,20 +111,20 @@ class Calendar extends React.Component {
     return (
       <div className="main-container">
         <div className="main-container-header">Header</div>
-        <div className="calendar-layout-container">
-          <div className="navbar">Navbar</div>
+        <div className="navbar">{this.renderNavbar()}</div>
 
-          <div className="calendar-body">
-            left calendar
-            <div className="calendar-head">Header with month and year</div>
-            <div className="calendar-weekday">Day of the week bar</div>
-            <div className="calendar-cells">Day cells</div>
+          <div className="calendar-layout-container">
+            <div className="calendar-body">
+              <div className="calendar-weekday">{this.renderWeekDays('current')}</div>
+              <div className="calendar-cells">{this.renderCells('current')}</div>
+            </div>
+            <div className="calendar-body">
+              <div className="calendar-weekday">{this.renderWeekDays('next')}</div>
+              <div className="calendar-cells">{this.renderCells('next')}</div>
+            </div>
           </div>
 
-
-          <div className="calendar-body">right calendar</div>
           <div className="bottom-section">bottom section</div>
-        </div>
       </div>
     );
   }
