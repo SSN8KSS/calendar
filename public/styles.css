@@ -1,0 +1,77 @@
+.navbar-container {
+  border:1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col {
+  max-width: 100%;
+  border: 1px solid lightgrey;
+}
+
+.weekdays-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 30px;
+  justify-content: space-between;
+  text-align: center;
+  border: 1px solid lightgrey;
+}
+
+.calendar-layout-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.bottom-section {
+  border: 1px solid lightgrey
+}
+
+.cell {
+  border: 1px solid grey;
+  background-color: beige;
+}
+
+.cell:hover {
+  background-color: lightgreen;
+  color: white;
+}
+
+.cell-disabled {
+  background-color: lightgrey;
+  color: lightgrey;
+}
+
+.cell-selected {
+  background-color: lightcoral;
+}
+
+.main-container-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  text-align: center;
+  border: 1px solid lightgrey;
+}
+
+.main-container-bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  text-align: left;
+  border: 1px solid lightgrey;
+}
