@@ -15,7 +15,7 @@ class Calendar extends React.Component {
   }
 
   renderNavbar () {
-    const dateFormat = "MMMM yyyy";
+    const dateFormat = 'MMMM yyyy';
 
     return (
       <div className="navbar-container">
@@ -35,7 +35,7 @@ class Calendar extends React.Component {
         </div>
 
         <div className="col">
-          <button type="button">previous</button>
+          <button type="button" onClick={this.nextMonth}>next</button>
         </div>
       </div>
     );
@@ -46,13 +46,13 @@ class Calendar extends React.Component {
     const days = [];
 
     let startDate;
-    term === 'current' ? startDate = moment(this.state.currentMonth).startOf('week') : startDate = moment(this.state.nextMonth).startOf('week');
+    term === this.state.currentMonth ? startDate = moment(this.state.currentMonth).startOf('week') : startDate = moment(this.state.nextMonth).startOf('week');
 
     for (var i = 0; i < 7; i++) {
       days.push(
         <div
           key={i}>
-          {moment(startDate).add(i,'days').format(dateFormat)}
+          {moment(startDate).add(i, 'days').format(dateFormat)}
         </div>);
     }
     return <div className="weekdays-row">{days}</div>;
@@ -61,7 +61,7 @@ class Calendar extends React.Component {
 
   renderCells (term) {
     let currentMonth;
-    if (term === 'current') {
+    if (term === this.state.currentMonth) {
       currentMonth = this.state.currentMonth;
     } else {
       currentMonth = this.state.nextMonth;
@@ -103,9 +103,19 @@ class Calendar extends React.Component {
 
   onDateClick () {}
 
-  nextMonth () {}
+  nextMonth () {
+    this.setState({
+      currentMonth: moment(this.state.currentMonth).add(1, 'month'),
+      nextMonth: moment(this.state.nextMonth).add(1, 'month')
+    });
+  }
 
-  prevMonth () {}
+  prevMonth () {
+    this.setState({
+      currentMonth: moment(this.state.currentMonth).subtract(1, 'month'),
+      nextMonth: moment(this.state.nextMonth).subtract(1, 'month')
+    });
+  }
 
   render () {
     return (
@@ -113,18 +123,18 @@ class Calendar extends React.Component {
         <div className="main-container-header">Header</div>
         <div className="navbar">{this.renderNavbar()}</div>
 
-          <div className="calendar-layout-container">
-            <div className="calendar-body">
-              <div className="calendar-weekday">{this.renderWeekDays('current')}</div>
-              <div className="calendar-cells">{this.renderCells('current')}</div>
-            </div>
-            <div className="calendar-body">
-              <div className="calendar-weekday">{this.renderWeekDays('next')}</div>
-              <div className="calendar-cells">{this.renderCells('next')}</div>
-            </div>
+        <div className="calendar-layout-container">
+          <div className="calendar-body">
+            <div className="calendar-weekday">{this.renderWeekDays(this.state.currentMonth)}</div>
+            <div className="calendar-cells">{this.renderCells(this.state.currentMonth)}</div>
           </div>
+          <div className="calendar-body">
+            <div className="calendar-weekday">{this.renderWeekDays(this.state.nextMonth)}</div>
+            <div className="calendar-cells">{this.renderCells(this.state.nextMonth)}</div>
+          </div>
+        </div>
 
-          <div className="bottom-section">bottom section</div>
+        <div className="bottom-section">bottom section</div>
       </div>
     );
   }
