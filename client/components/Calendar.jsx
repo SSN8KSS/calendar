@@ -20,7 +20,7 @@ class Calendar extends React.Component {
     return (
       <div className="navbar-container">
         <div className="col">
-          <button type="button">previous</button>
+          <button type="button" onClick={this.prevMonth}>previous</button>
         </div>
 
         <div className="col">
@@ -83,8 +83,13 @@ class Calendar extends React.Component {
         formattedDate = moment(day).format(dateFormat);
         const dayCopy = day;
         days.push(
-          <div className="cell">
-            <span className="number">{formattedDate}</span>
+          <div
+            className={`cell${
+              !moment(day).isSame(monthStart, 'month') ? '-disabled' :
+                moment(day).isSame(selectedDate, 'day') ? '-selected' : '' }`}
+            key={day}
+            onClick={ () => { this.onDateClick(dayCopy); }}
+          ><span className="number">{formattedDate}</span>
           </div>
         );
         day = moment(day).add(1, 'day');
@@ -101,7 +106,11 @@ class Calendar extends React.Component {
     return <div className="body">{rows}</div>;
   }
 
-  onDateClick () {}
+  onDateClick (day) {
+    this.setState({
+      selectedDate: day
+    });
+  }
 
   nextMonth () {
     this.setState({
