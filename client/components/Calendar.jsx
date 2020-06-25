@@ -7,7 +7,10 @@ class Calendar extends React.Component {
     this.state = {
       currentMonth: moment(new Date()),
       selectedDate: moment(new Date()),
-      nextMonth: moment(new Date()).add(1, 'month')
+      nextMonth: moment(new Date()).add(1, 'month'),
+      checkIn: false,
+      checkOut: false,
+      clickCounter: 0
     };
     this.onDateClick = this.onDateClick.bind(this);
     this.nextMonth = this.nextMonth.bind(this);
@@ -88,7 +91,7 @@ class Calendar extends React.Component {
               !moment(day).isSame(monthStart, 'month') ? '-disabled' :
                 moment(day).isSame(selectedDate, 'day') ? '-selected' : '' }`}
             key={day}
-            onClick={ () => { this.onDateClick(dayCopy); }}
+            onClick={ ()=>{ this.onDateClick(dayCopy); }}
           ><span className="number">{formattedDate}</span>
           </div>
         );
@@ -107,9 +110,21 @@ class Calendar extends React.Component {
   }
 
   onDateClick (day) {
-    this.setState({
-      selectedDate: day
-    });
+    if (!this.state.clickCounter) {
+      this.setState({
+        selectedDate: day,
+        checkIn: day,
+        clickCounter: 1
+      });
+    } else {
+      if (!moment(day).isBefore(this.state.checkIn)) {
+        this.setState({
+          selectedDate: day,
+          checkOut: day,
+          clickCounter: 0
+        });
+      } else {}
+    }
   }
 
   nextMonth () {
@@ -129,7 +144,7 @@ class Calendar extends React.Component {
   render () {
     return (
       <div className="main-container">
-        <div className="main-container-header">Header</div>
+        <div className="main-container-header"><span className="main-cont-header-span">Select a date to continue</span></div>
         <div className="navbar">{this.renderNavbar()}</div>
 
         <div className="calendar-layout-container">
@@ -143,7 +158,8 @@ class Calendar extends React.Component {
           </div>
         </div>
 
-        <div className="bottom-section">bottom section</div>
+        <div className="main-container-bottom"><span className="main-cont-header-span">Average daily rates: $122-$285</span></div>
+
       </div>
     );
   }
