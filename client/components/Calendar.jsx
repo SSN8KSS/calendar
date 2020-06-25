@@ -22,8 +22,22 @@ class Calendar extends React.Component {
 
   render () {
     return (
-      <div>
-        <h3>Calendar will be here</h3>
+      <div className="main-container">
+        <div className="main-container-header">Header</div>
+        <div className="calendar-layout-container">
+          <div className="navbar">Navbar</div>
+
+          <div className="calendar-body">
+            left calendar
+            <div className="calendar-head">Header with month and year</div>
+            <div className="calendar-weekday">Day of the week bar</div>
+            <div className="calendar-cells">Day cells</div>
+          </div>
+
+
+          <div className="calendar-body">right calendar</div>
+          <div className="bottom-section">bottom section</div>
+        </div>
       </div>
     );
   }
