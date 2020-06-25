@@ -23,6 +23,7 @@ class App extends React.Component {
   getData (term) {
     const response = getDataFromServer(term);
     response.then((hotel) => {
+      // console.log(hotel);
       this.setState({
         currentHotel: hotel
       });
@@ -46,7 +47,7 @@ class App extends React.Component {
           <BestDeals />
         </div>
         <div>
-          <AllDeals />
+          <AllDeals currentHotel={this.state.currentHotel}/>
         </div>
       </div>
     );

@@ -75,3 +75,21 @@
   text-align: left;
   border: 1px solid lightgrey;
 }
+
+/* ALL DEALS */
+.allDeals-container {
+  width: 50%;
+  border: 1px solid grey;
+}
+
+.allDeals-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3,1fr);
+}
+
+.allDeals-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
