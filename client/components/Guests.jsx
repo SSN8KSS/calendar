@@ -7,8 +7,8 @@ class Guests extends React.Component {
 
     this.state = {
       roomsNumber: 1,
-      adultsNumber: 1,
-      childrenNumber: 1
+      adultsNumber: 2,
+      childrenNumber: 2
     };
     this.handleMinusClick = this.handleMinusClick.bind(this);
     this.handlePlusClick = this.handlePlusClick.bind(this);
@@ -55,11 +55,11 @@ class Guests extends React.Component {
   render () {
     let links = {'state': ['roomsNumber', 'adultsNumber', 'childrenNumber']};
     const lines = [];
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
       lines.push(
         <div className='guests-line' key={i}>
           <span>icon</span>
-          <span>splitter</span>
+          <span>#</span>
 
           <span data-id={i} onClick={this.handleMinusClick}>minus</span>
 
@@ -70,11 +70,11 @@ class Guests extends React.Component {
       );
     }
     return (
-      <div className='guests-container'>Guests
+      <div className='guests-container'>
         <div>{lines}</div>
 
         <div>
-          <Children />
+          <Children childrenNumber={this.state.childrenNumber}/>
         </div>
 
       </div>
