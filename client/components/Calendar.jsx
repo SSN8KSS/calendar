@@ -135,7 +135,7 @@ class Calendar extends React.Component {
       this.setState({
         checkIn: false,
         checkOut: false
-      })
+      });
     }
   }
 
