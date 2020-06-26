@@ -15,6 +15,7 @@ class Calendar extends React.Component {
     this.onDateClick = this.onDateClick.bind(this);
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
+    this.checkState = this.checkState.bind(this);
   }
 
   renderNavbar () {
@@ -115,15 +116,26 @@ class Calendar extends React.Component {
         selectedDate: day,
         checkIn: day,
         clickCounter: 1
-      });
+      }, () => { this.checkState(); });
     } else {
       if (!moment(day).isBefore(this.state.checkIn)) {
         this.setState({
           selectedDate: day,
           checkOut: day,
           clickCounter: 0
-        });
+        }, () => { this.checkState(); });
       } else {}
+    }
+  }
+
+  checkState() {
+    if (this.state.checkIn && this.state.checkOut) {
+      const dates = {checkIn: this.state.checkIn, checkOut: this.state.checkOut};
+      this.props.getUpdatedData(dates);
+      this.setState({
+        checkIn: false,
+        checkOut: false
+      });
     }
   }
 

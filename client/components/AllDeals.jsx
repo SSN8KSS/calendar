@@ -38,11 +38,11 @@ class AllDeals extends React.Component {
 
   renderAll () {
     let hotels = this.props.currentHotel;
-    if (hotels.length === 0) {
-      return (<div></div>);
+    if (hotels.length === 0 || !hotels) {
+      return (<div>Loading...</div>);
     } else {
       let rates = [];
-      for (var i = 0; i < hotels[0].prices.length; i++) {
+      for (var i = hotels[0].prices.length - 1; i >= 0; i--) {
         rates.push(
           <div key={i}>
             <span className="viewAll-span">{hotels[0].prices[i].serviceName}</span>

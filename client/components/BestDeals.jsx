@@ -3,7 +3,7 @@ import BestDealsEntity from './BestDealsEntity.jsx';
 import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
 
 const BestDeals = ({currentHotel}) => {
-  if (currentHotel.length === 0) {
+  if (currentHotel.length === 0 || !currentHotel) {
     return (<div>Loading...</div>);
   } else {
     let best = getBestOrRestDeals(currentHotel, 'getBest');

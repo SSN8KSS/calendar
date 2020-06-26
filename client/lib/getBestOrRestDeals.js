@@ -15,12 +15,12 @@ const getBestOrRestDeals = (hotels, param) => {
   }, []);
 
   if (param === 'getBest') {
-    const result = temp.slice(0, 3);
+    const result = temp.slice(0, 2);
     return result;
   }
 
   if (param === 'getRest') {
-    const result = temp.slice(3);
+    const result = temp.slice(2);
     return result;
   }
 };

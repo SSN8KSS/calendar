@@ -5,6 +5,7 @@ import Guests from './components/Guests.jsx';
 import BestDeals from './components/BestDeals.jsx';
 import AllDeals from './components/AllDeals.jsx';
 import getDataFromServer from './lib/getDataFromServer.js';
+import getUpdatedDataFromServer from './lib/getUpdatedDataFromServer.js';
 
 class App extends React.Component {
   constructor (props) {
@@ -14,10 +15,11 @@ class App extends React.Component {
       currentHotel: []
     };
     this.getData = this.getData.bind(this);
+    this.getUpdatedData = this.getUpdatedData.bind(this);
   }
 
   componentDidMount () {
-    this.getData('digital');
+    this.getData('94');
   }
 
   getData (term) {
@@ -30,6 +32,24 @@ class App extends React.Component {
     });
   }
 
+  getUpdatedData (param, guests = 2, roomsNumber = 1) {
+    const query = param;
+    query['id'] = this.state.currentHotel[0].id;
+    query['guestsNumber'] = guests;
+    query['roomsNumber'] = roomsNumber;
+    const response = getUpdatedDataFromServer(param);
+    response.then((hotel) => {
+      console.log('RESPONCE', hotel);
+      if (hotel[0]['err_msg']) {
+        console.log(hotel[0]['err_msg']);
+      } else {
+        this.setState({
+          currentHotel: hotel
+        });
+      }
+    });
+  }
+
   render () {
 
     return (
@@ -38,7 +58,7 @@ class App extends React.Component {
           <h5>5 people currently viewing this hotel</h5>
         </div>
         <div>
-          <Calendar />
+          <Calendar getUpdatedData={this.getUpdatedData}/>
         </div>
         <div>
           <Guests />
