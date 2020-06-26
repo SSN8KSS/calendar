@@ -116,22 +116,22 @@ class Calendar extends React.Component {
         selectedDate: day,
         checkIn: day,
         clickCounter: 1
-      }, () => {this.checkState()});
+      }, () => { this.checkState(); });
     } else {
       if (!moment(day).isBefore(this.state.checkIn)) {
         this.setState({
           selectedDate: day,
           checkOut: day,
           clickCounter: 0
-        }, () => {this.checkState()});
+        }, () => { this.checkState(); });
       } else {}
     }
   }
 
   checkState() {
     if (this.state.checkIn && this.state.checkOut) {
-      const dates = {checkIn: this.state.checkIn, checkOut: this.state.checkOut}
-      this.props.getUpdatedData(dates)
+      const dates = {checkIn: this.state.checkIn, checkOut: this.state.checkOut};
+      this.props.getUpdatedData(dates);
     }
   }
 

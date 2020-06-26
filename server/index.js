@@ -14,7 +14,6 @@ app.use(parser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get('/api/calendar/db/:hotelIdOrName', (req, res) => {
-  console.log(req.params)
   let q = req.params.hotelIdOrName;
   let parsed = parseInt(q);
   if (parsed) {
@@ -33,18 +32,6 @@ app.get('/api/calendar/db/:hotelIdOrName', (req, res) => {
   });
 });
 
-app.get('/api/calendar/update/', (req, res) => {
-  console.log(req.query);
-  db.model.find({'id':req.query.id}, (err, data) => {
-    if (err) {
-      console.log('DB QUERY ERROR', err);
-    } else {
-      console.log('DB QUERY SUCCESS');
-      sendResponseWithUpdatedData(data, req, res);
-    }
-  });
-});
-
 const sendResponseWithUpdatedData = (data, req, res) => {
   const checkInDate = moment(req.query.checkIn).format('YYYY-MM-DD');
   const checkOutDate = moment(req.query.checkOut).format('YYYY-MM-DD');
@@ -53,7 +40,7 @@ const sendResponseWithUpdatedData = (data, req, res) => {
   let roomsNumber = req.query.roomsNumber;
   let response = true;
   let newData = [...data];
-  let rej = [{err_msg: ''}];
+  let rej = [{'err_msg': ''}];
   let totalNights;
 
   if (dataItem.maxGuestPerRoom < guestsNumber) {
@@ -76,7 +63,6 @@ const sendResponseWithUpdatedData = (data, req, res) => {
     }
   }
   let timeGap = dataItem.vacancy.slice(checkInIndex, checkOutIndex);
-  console.log(timeGap);
   totalNights = timeGap.length;
   for (let j = 0; j < timeGap.length; j++) {
     if (timeGap[j].isBooked) {
@@ -94,6 +80,17 @@ const sendResponseWithUpdatedData = (data, req, res) => {
   } else {
     res.status(200).send(rej);
   }
-}
+};
+
+app.get('/api/calendar/update/', (req, res) => {
+  db.model.find({'id': req.query.id}, (err, data) => {
+    if (err) {
+      console.log('DB QUERY ERROR', err);
+    } else {
+      console.log('DB QUERY SUCCESS');
+      sendResponseWithUpdatedData(data, req, res);
+    }
+  });
+});
 
 module.exports = app;

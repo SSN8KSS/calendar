@@ -39,7 +39,7 @@ class App extends React.Component {
     query['roomsNumber'] = roomsNumber;
     const response = getUpdatedDataFromServer(param);
     response.then((hotel) => {
-      console.log('RESPONCE',hotel);
+      console.log('RESPONCE', hotel);
       if (hotel[0]['err_msg']) {
         console.log(hotel[0]['err_msg']);
       } else {
