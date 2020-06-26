@@ -76,6 +76,13 @@
   border: 1px solid lightgrey;
 }
 
+/* BEST DEALS */
+
+.bestDeals-container {
+  width: 50%;
+  border: 1px solid grey;
+}
+
 /* ALL DEALS */
 .allDeals-container {
   width: 50%;
@@ -85,7 +92,7 @@
 .allDeals-grid {
   display:grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
 }
 
 .allDeals-line {

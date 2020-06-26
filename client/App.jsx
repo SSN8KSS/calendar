@@ -44,7 +44,7 @@ class App extends React.Component {
           <Guests />
         </div>
         <div>
-          <BestDeals />
+          <BestDeals currentHotel={this.state.currentHotel}/>
         </div>
         <div>
           <AllDeals currentHotel={this.state.currentHotel}/>
