@@ -25,7 +25,7 @@ class App extends React.Component {
   getData (term) {
     const response = getDataFromServer(term);
     response.then((hotel) => {
-      console.log(hotel);
+      // console.log(hotel);
       this.setState({
         currentHotel: hotel
       });
@@ -33,19 +33,21 @@ class App extends React.Component {
   }
 
   getUpdatedData (param, guests = 2, roomsNumber = 1) {
-    console.log(param);
     const query = param;
     query['id'] = this.state.currentHotel[0].id;
     query['guestsNumber'] = guests;
     query['roomsNumber'] = roomsNumber;
-    console.log(query);
     const response = getUpdatedDataFromServer(param);
-    // response.then((hotel) => {
-    //   // console.log(hotel);
-    //   this.setState({
-    //     currentHotel: hotel
-    //   });
-    // });
+    response.then((hotel) => {
+      console.log('RESPONCE',hotel);
+      if (hotel[0]['err_msg']) {
+        console.log(hotel[0]['err_msg']);
+      } else {
+        this.setState({
+          currentHotel: hotel
+        });
+      }
+    });
   }
 
   render () {

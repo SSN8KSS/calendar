@@ -53,7 +53,7 @@ const sendResponseWithUpdatedData = (data, req, res) => {
   let roomsNumber = req.query.roomsNumber;
   let response = true;
   let newData = [...data];
-  let rej = {err_msg: ''};
+  let rej = [{err_msg: ''}];
   let totalNights;
 
   if (dataItem.maxGuestPerRoom < guestsNumber) {
@@ -61,7 +61,7 @@ const sendResponseWithUpdatedData = (data, req, res) => {
   }
 
   if (dataItem.roomsTotal < roomsNumber) {
-    rej['err_msg'] = '<over the limit of rooms available at the property>';
+    rej[0]['err_msg'] = '<over the limit of rooms available at the property>';
     response = false;
   }
 
@@ -80,7 +80,7 @@ const sendResponseWithUpdatedData = (data, req, res) => {
   totalNights = timeGap.length;
   for (let j = 0; j < timeGap.length; j++) {
     if (timeGap[j].isBooked) {
-      rej['err_msg'] += '<your dates are not available>';
+      rej[0]['err_msg'] += '<your dates are not available>';
       response = false;
       break;
     }
