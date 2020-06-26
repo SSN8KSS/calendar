@@ -19,13 +19,13 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getData('digital');
+    this.getData('53');
   }
 
   getData (term) {
     const response = getDataFromServer(term);
     response.then((hotel) => {
-      // console.log(hotel);
+      console.log(hotel);
       this.setState({
         currentHotel: hotel
       });

@@ -38,8 +38,8 @@ class AllDeals extends React.Component {
 
   renderAll () {
     let hotels = this.props.currentHotel;
-    if (hotels.length === 0) {
-      return (<div></div>);
+    if (hotels.length === 0 || !hotels) {
+      return (<div>Loading...</div>);
     } else {
       let rates = [];
       for (var i = 0; i < hotels[0].prices.length; i++) {
