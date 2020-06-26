@@ -1,8 +1,15 @@
 import React from 'react';
 
-const Guests = () => (
+class Guests extends React.Component {
+  constructor () {
+    super();
+  }
 
-  <h3>Guests will be here</h3>
-);
+  render () {
+    return (
+      <div>Guests</div>
+    )
+  }
+}
 
 export default Guests;
