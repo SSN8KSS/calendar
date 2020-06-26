@@ -12,7 +12,8 @@ app.use(parser.urlencoded({extended: true}));
 
 app.use(express.static('public'));
 
-app.get('/api/calendar/:hotelIdOrName', (req, res) => {
+app.get('/api/calendar/db/:hotelIdOrName', (req, res) => {
+  console.log(req.params)
   let q = req.params.hotelIdOrName;
   let parsed = parseInt(q);
   if (parsed) {
@@ -30,5 +31,10 @@ app.get('/api/calendar/:hotelIdOrName', (req, res) => {
     }
   });
 });
+
+app.get('/api/calendar/update/', (req, res) => {
+  console.log(req.query);
+  res.status(200).send('ok');
+})
 
 module.exports = app;

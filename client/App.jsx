@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getData('53');
+    this.getData('94');
   }
 
   getData (term) {
