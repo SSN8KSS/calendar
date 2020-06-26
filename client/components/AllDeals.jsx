@@ -1,4 +1,5 @@
 import React from 'react';
+import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
 
 class AllDeals extends React.Component {
   constructor (props) {
@@ -8,25 +9,24 @@ class AllDeals extends React.Component {
       isClicked: false
     };
 
-    this.renderSix = this.renderSix.bind(this);
+    this.renderFour = this.renderFour.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
   }
 
-  renderSix (hotels) {
+  renderFour (hotels) {
     const displaySix = [];
     if (hotels.length === 0) {
       return ( <div>Loading data...</div>);
     } else {
-      for (var i = 0; i < hotels[0].prices.length; i++) {
-        if (hotels[0].prices[i].price !== 0) {
+      let sorted = getBestOrRestDeals(hotels, 'getRest');
+      for (var i = 0; i < sorted.length; i++) {
           displaySix.push(
             <div className="allDeals-line" key={i}>
-              <span>{hotels[0].prices[i].serviceName}</span>
-              <span>{hotels[0].prices[i].price}</span>
+              <span>{sorted[i].serviceName}</span>
+              <span>{sorted[i].price}</span>
             </div>);
-        }
       }
-      return displaySix.slice(0, 6);
+      return displaySix.slice(0,4);
     }
   }
 
@@ -59,7 +59,7 @@ class AllDeals extends React.Component {
       <div className="allDeals-container">
 
         <div className="allDeals-grid">
-          {this.renderSix(this.props.currentHotel)}
+          {this.renderFour(this.props.currentHotel)}
         </div>
 
         <div style={{'textAlign': 'center'}}>
