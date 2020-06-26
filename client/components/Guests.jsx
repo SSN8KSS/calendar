@@ -77,6 +77,10 @@ class Guests extends React.Component {
           <Children childrenNumber={this.state.childrenNumber}/>
         </div>
 
+        <div>
+          <button>UPDATE</button>
+        </div>
+
       </div>
     );
   }
