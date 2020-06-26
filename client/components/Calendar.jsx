@@ -76,6 +76,7 @@ class Calendar extends React.Component {
     const monthEnd = moment(currentMonth).endOf('month');
     const startDate = moment(monthStart).startOf('week');
     const endDate = moment(monthEnd).endOf('week');
+    const today = moment().startOf('day');
 
     const rows = [];
     let days = [];
@@ -89,8 +90,11 @@ class Calendar extends React.Component {
         days.push(
           <div
             className={`cell${
+              moment(day).isSame(moment(), 'day') ? '-today' :
               !moment(day).isSame(monthStart, 'month') ? '-disabled' :
-                moment(day).isSame(selectedDate, 'day') ? '-selected' : '' }`}
+              moment(day).isBefore(today) ? '-inactive' : ''
+                // moment(day).isSame(selectedDate, 'day') ? '-selected' : ''
+              }`}
             key={day}
             onClick={ ()=>{ this.onDateClick(dayCopy); }}
           ><span className="number">{formattedDate}</span>
