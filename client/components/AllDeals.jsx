@@ -20,13 +20,13 @@ class AllDeals extends React.Component {
     } else {
       let sorted = getBestOrRestDeals(hotels, 'getRest');
       for (var i = 0; i < sorted.length; i++) {
-          displaySix.push(
-            <div className="allDeals-line" key={i}>
-              <span>{sorted[i].serviceName}</span>
-              <span>{sorted[i].price}</span>
-            </div>);
+        displaySix.push(
+          <div className="allDeals-line" key={i}>
+            <span>{sorted[i].serviceName}</span>
+            <span>{sorted[i].price}</span>
+          </div>);
       }
-      return displaySix.slice(0,4);
+      return displaySix.slice(0, 4);
     }
   }
 

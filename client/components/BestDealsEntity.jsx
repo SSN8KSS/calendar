@@ -5,6 +5,6 @@ const BestDealsEntity = ({item}) => (
     <span>{item.serviceName}</span>
     <span>{item.price}</span>
   </div>
-)
+);
 
 export default BestDealsEntity;

@@ -5,21 +5,20 @@ import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
 const BestDeals = ({currentHotel}) => {
   if (currentHotel.length === 0) {
     return (<div>Loading...</div>);
-    ///
   } else {
     let best = getBestOrRestDeals(currentHotel, 'getBest');
     return (
-    <div className="bestDeals-container">
-      {best.map((item)=>(
+      <div className="bestDeals-container">
+        {best.map((item)=>(
           <BestDealsEntity
-          item={item}
-          key={item._id}
+            item={item}
+            key={item._id}
           />
-      ))}
-    </div>
-    )
+        ))}
+      </div>
+    );
   }
 
-}
+};
 
 export default BestDeals;
