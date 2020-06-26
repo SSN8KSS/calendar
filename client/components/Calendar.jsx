@@ -132,6 +132,10 @@ class Calendar extends React.Component {
     if (this.state.checkIn && this.state.checkOut) {
       const dates = {checkIn: this.state.checkIn, checkOut: this.state.checkOut};
       this.props.getUpdatedData(dates);
+      this.setState({
+        checkIn: false,
+        checkOut: false
+      })
     }
   }
 
