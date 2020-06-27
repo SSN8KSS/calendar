@@ -156,4 +156,30 @@
   margin-right: 5px;
 }
 
+/* CALENDAR LAND MODULE */
+.cal-land-container {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 5fr 1fr 5fr;
+  grid-template-rows: 1;
+  border: 1px solid grey;
+}
 
+.check-field {
+  border: 1px solid lightgreen;
+}
+
+/* GUESTS LAND MODULE */
+
+.guests-land-container {
+  width: 50%;
+  border: 1px solid grey;
+}
+
+/* CURENT PEOPLE VIEWING */
+
+.current-land-container {
+  width: 50%;
+  border: 1px solid grey;
+  text-align: center;
+}
