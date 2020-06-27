@@ -7,6 +7,8 @@ import AllDeals from './components/AllDeals.jsx';
 import moment from 'moment';
 import getDataFromServer from './lib/getDataFromServer.js';
 import getUpdatedDataFromServer from './lib/getUpdatedDataFromServer.js';
+import styled from 'styled-components';
+import {AppWrapper, HeaderWrapper, HeaderSpan, CalendarWrapper, GuestsWrapper, AllDealsWrapper, BestDealsWrapper} from './AppStyles.js';
 
 class App extends React.Component {
   constructor (props) {
@@ -179,23 +181,34 @@ class App extends React.Component {
   render () {
 
     return (
-      <div>
-        <div className="current-land-container">
+      <AppWrapper>
+        {/* <div className="current-land-container">
           <span>5 people currently viewing this hotel</span>
-        </div>
+        </div> */}
 
-        <div>{this.renderCalendar()}</div>
+        <HeaderWrapper>
+          <HeaderSpan>
+            5 people currently viewing this hotel
+          </HeaderSpan>
+        </HeaderWrapper>
 
-        <div>{this.renderGuests()}</div>
+        <CalendarWrapper>
+          {this.renderCalendar()}
+        </CalendarWrapper>
 
-        <div>
+        <GuestsWrapper>
+          {this.renderGuests()}
+        </GuestsWrapper>
+
+        <BestDealsWrapper>
           <BestDeals currentHotel={this.state.currentHotel}/>
-        </div>
+        </BestDealsWrapper>
 
-        <div>
+        <AllDealsWrapper>
           <AllDeals currentHotel={this.state.currentHotel}/>
-        </div>
-      </div>
+        </AllDealsWrapper>
+
+      </AppWrapper>
     );
   }
 }
