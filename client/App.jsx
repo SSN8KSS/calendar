@@ -107,8 +107,8 @@ class App extends React.Component {
         </div>
         <div>
           <Calendar
-          getUpdatedData={this.getUpdatedData}
-          calculateAvrgRate={this.calculateAvrgRate}/>
+            getUpdatedData={this.getUpdatedData}
+            calculateAvrgRate={this.calculateAvrgRate}/>
         </div>
         <div>
           <Guests getUpdatedData={this.getUpdatedData}/>
