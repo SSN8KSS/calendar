@@ -54,7 +54,6 @@ class Guests extends React.Component {
   }
 
   handleUpdateClick () {
-    console.log('clicked');
     let guestsTotal = this.state.adultsNumber + this.state.childrenNumber;
     let config = ({'guestsNumber': guestsTotal, 'roomsNumber': this.state.roomsNumber});
     this.props.getUpdatedData(config);

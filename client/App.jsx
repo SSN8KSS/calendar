@@ -19,6 +19,7 @@ class App extends React.Component {
     };
     this.getData = this.getData.bind(this);
     this.getUpdatedData = this.getUpdatedData.bind(this);
+    this.calculateAvrgRate = this.calculateAvrgRate.bind(this);
   }
 
   componentDidMount () {
@@ -63,7 +64,6 @@ class App extends React.Component {
         query.checkOut = this.state.checkOut;
       }
     }
-    console.log('FINAL QUERY', query);
     const response = getUpdatedDataFromServer(query);
     response.then((hotel) => {
       console.log('RESPONCE', hotel);
@@ -77,6 +77,27 @@ class App extends React.Component {
     });
   }
 
+  calculateAvrgRate () {
+    if (!this.state.currentHotel[0]) {
+      return 'Loading...';
+    } else {
+      const prices = this.state.currentHotel[0].prices;
+      let smallest = prices[0];
+      let biggest = prices[1];
+      for (let i = 0; i < prices.length; i++) {
+        if (prices[i].price) {
+          if (prices[i].price < smallest) {
+            smallest = prices[i].price;
+          }
+          if (prices[i].price > biggest) {
+            biggest = prices[i].price;
+          }
+        }
+      }
+      return `$${smallest.price} - $${biggest.price}`;
+    }
+  }
+
   render () {
 
     return (
@@ -85,7 +106,9 @@ class App extends React.Component {
           <h5>5 people currently viewing this hotel</h5>
         </div>
         <div>
-          <Calendar getUpdatedData={this.getUpdatedData}/>
+          <Calendar
+          getUpdatedData={this.getUpdatedData}
+          calculateAvrgRate={this.calculateAvrgRate}/>
         </div>
         <div>
           <Guests getUpdatedData={this.getUpdatedData}/>

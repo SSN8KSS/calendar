@@ -33,10 +33,8 @@ app.get('/api/calendar/db/:hotelIdOrName', (req, res) => {
 });
 
 const sendResponseWithUpdatedData = (data, req, res) => {
-  console.log('QUERY', req.query);
   const checkInDate = req.query.checkIn;
   const checkOutDate = req.query.checkOut;
-  console.log('LOG', checkInDate, checkOutDate);
   const guestsNumber = req.query.guestsNumber;
   const dataItem = data[0];
   let roomsNumber = req.query.roomsNumber;

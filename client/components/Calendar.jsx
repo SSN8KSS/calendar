@@ -10,13 +10,13 @@ class Calendar extends React.Component {
       nextMonth: moment(new Date()).add(1, 'month'),
       checkIn: false,
       checkOut: false,
-      clickCounter: 0
+      clickCounter: 0,
+      averageRate: ''
     };
     this.onDateClick = this.onDateClick.bind(this);
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
     this.checkState = this.checkState.bind(this);
-    // this.updateGuestsState = this.updateGuestsState.bind(this);
   }
 
   renderNavbar () {
@@ -175,7 +175,7 @@ class Calendar extends React.Component {
           </div>
         </div>
 
-        <div className="main-container-bottom"><span className="main-cont-header-span">Average daily rates: $122-$285</span></div>
+        <div className="main-container-bottom"><span className="main-cont-header-span">Average daily rates: {this.props.calculateAvrgRate()}</span></div>
 
       </div>
     );
