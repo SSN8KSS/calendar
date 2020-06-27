@@ -8,10 +8,11 @@ class Guests extends React.Component {
     this.state = {
       roomsNumber: 1,
       adultsNumber: 2,
-      childrenNumber: 2
+      childrenNumber: 0
     };
     this.handleMinusClick = this.handleMinusClick.bind(this);
     this.handlePlusClick = this.handlePlusClick.bind(this);
+    this.handleUpdateClick = this.handleUpdateClick.bind(this);
   }
 
   handleMinusClick (event) {
@@ -52,6 +53,13 @@ class Guests extends React.Component {
     }
   }
 
+  handleUpdateClick () {
+    console.log('clicked');
+    let guestsTotal = this.state.adultsNumber + this.state.childrenNumber;
+    let config = ({'guestsNumber': guestsTotal, 'roomsNumber': this.state.roomsNumber});
+    this.props.getUpdatedData(config);
+  }
+
   render () {
     let links = {'state': ['roomsNumber', 'adultsNumber', 'childrenNumber']};
     const lines = [];
@@ -78,7 +86,7 @@ class Guests extends React.Component {
         </div>
 
         <div>
-          <button>UPDATE</button>
+          <button onClick={this.handleUpdateClick}>UPDATE</button>
         </div>
 
       </div>

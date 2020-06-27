@@ -16,6 +16,7 @@ class Calendar extends React.Component {
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
     this.checkState = this.checkState.bind(this);
+    // this.updateGuestsState = this.updateGuestsState.bind(this);
   }
 
   renderNavbar () {
@@ -91,10 +92,10 @@ class Calendar extends React.Component {
           <div
             className={`cell${
               moment(day).isSame(moment(), 'day') ? '-today' :
-              !moment(day).isSame(monthStart, 'month') ? '-disabled' :
-              moment(day).isBefore(today) ? '-inactive' : ''
-                // moment(day).isSame(selectedDate, 'day') ? '-selected' : ''
-              }`}
+                !moment(day).isSame(monthStart, 'month') ? '-disabled' :
+                  moment(day).isBefore(today) ? '-inactive' : ''
+              // moment(day).isSame(selectedDate, 'day') ? '-selected' : ''
+            }`}
             key={day}
             onClick={ ()=>{ this.onDateClick(dayCopy); }}
           ><span className="number">{formattedDate}</span>
@@ -134,7 +135,7 @@ class Calendar extends React.Component {
 
   checkState() {
     if (this.state.checkIn && this.state.checkOut) {
-      const dates = {checkIn: this.state.checkIn, checkOut: this.state.checkOut};
+      const dates = {checkIn: moment(this.state.checkIn).format('YYYY-MM-DD'), checkOut: moment(this.state.checkOut).format('YYYY-MM-DD')};
       this.props.getUpdatedData(dates);
       this.setState({
         checkIn: false,
