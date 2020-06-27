@@ -113,18 +113,31 @@ class App extends React.Component {
   renderCalendar () {
     if (!this.state.calendarView) {
       return (
-        <div>
-          <button onClick={this.changeCalendarView}>CALENDAR</button>
+        <div className="cal-land-container">
+
+          <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
+          <div></div>
+          <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div>
+
         </div>
       );
     }
     if (this.state.calendarView) {
       return (
         <div>
-          <button onClick={this.changeCalendarView}>CALENDAR</button>
-          <Calendar
-            getUpdatedData={this.getUpdatedData}
-            calculateAvrgRate={this.calculateAvrgRate}/>
+
+          <div className="cal-land-container">
+            <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
+            <div></div>
+            <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div>
+          </div>
+
+          <div>
+            <Calendar
+              getUpdatedData={this.getUpdatedData}
+              calculateAvrgRate={this.calculateAvrgRate}/>
+          </div>
+
         </div>
       );
 
@@ -140,20 +153,25 @@ class App extends React.Component {
   renderGuests () {
     if (!this.state.guestsView) {
       return (
-        <div>
-          <button onClick={this.changeGuestsView}>GUESTS</button>
+        <div className="guests-land-container">
+          <div onClick={this.changeGuestsView}>Guests</div>
         </div>
-      )
+      );
     }
     if (this.state.guestsView) {
       return (
-
         <div>
-          <button onClick={this.changeGuestsView}>GUESTS</button>
-          <Guests getUpdatedData={this.getUpdatedData}/>
-        </div>
 
-      )
+          <div className="guests-land-container">
+            <div onClick={this.changeGuestsView}>Guests</div>
+          </div>
+
+          <div>
+            <Guests getUpdatedData={this.getUpdatedData}/>
+          </div>
+
+        </div>
+      );
     }
   }
 
@@ -162,8 +180,8 @@ class App extends React.Component {
 
     return (
       <div>
-        <div>
-          <h5>5 people currently viewing this hotel</h5>
+        <div className="current-land-container">
+          <span>5 people currently viewing this hotel</span>
         </div>
 
         <div>{this.renderCalendar()}</div>
@@ -173,6 +191,7 @@ class App extends React.Component {
         <div>
           <BestDeals currentHotel={this.state.currentHotel}/>
         </div>
+
         <div>
           <AllDeals currentHotel={this.state.currentHotel}/>
         </div>
