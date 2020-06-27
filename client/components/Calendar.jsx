@@ -10,7 +10,8 @@ class Calendar extends React.Component {
       nextMonth: moment(new Date()).add(1, 'month'),
       checkIn: false,
       checkOut: false,
-      clickCounter: 0
+      clickCounter: 0,
+      averageRate: ''
     };
     this.onDateClick = this.onDateClick.bind(this);
     this.nextMonth = this.nextMonth.bind(this);
@@ -76,6 +77,7 @@ class Calendar extends React.Component {
     const monthEnd = moment(currentMonth).endOf('month');
     const startDate = moment(monthStart).startOf('week');
     const endDate = moment(monthEnd).endOf('week');
+    const today = moment().startOf('day');
 
     const rows = [];
     let days = [];
@@ -89,8 +91,11 @@ class Calendar extends React.Component {
         days.push(
           <div
             className={`cell${
-              !moment(day).isSame(monthStart, 'month') ? '-disabled' :
-                moment(day).isSame(selectedDate, 'day') ? '-selected' : '' }`}
+              moment(day).isSame(moment(), 'day') ? '-today' :
+                !moment(day).isSame(monthStart, 'month') ? '-disabled' :
+                  moment(day).isBefore(today) ? '-inactive' : ''
+              // moment(day).isSame(selectedDate, 'day') ? '-selected' : ''
+            }`}
             key={day}
             onClick={ ()=>{ this.onDateClick(dayCopy); }}
           ><span className="number">{formattedDate}</span>
@@ -130,7 +135,7 @@ class Calendar extends React.Component {
 
   checkState() {
     if (this.state.checkIn && this.state.checkOut) {
-      const dates = {checkIn: this.state.checkIn, checkOut: this.state.checkOut};
+      const dates = {checkIn: moment(this.state.checkIn).format('YYYY-MM-DD'), checkOut: moment(this.state.checkOut).format('YYYY-MM-DD')};
       this.props.getUpdatedData(dates);
       this.setState({
         checkIn: false,
@@ -170,7 +175,7 @@ class Calendar extends React.Component {
           </div>
         </div>
 
-        <div className="main-container-bottom"><span className="main-cont-header-span">Average daily rates: $122-$285</span></div>
+        <div className="main-container-bottom"><span className="main-cont-header-span">Average daily rates: {this.props.calculateAvrgRate()}</span></div>
 
       </div>
     );

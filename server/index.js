@@ -33,8 +33,8 @@ app.get('/api/calendar/db/:hotelIdOrName', (req, res) => {
 });
 
 const sendResponseWithUpdatedData = (data, req, res) => {
-  const checkInDate = moment(req.query.checkIn).format('YYYY-MM-DD');
-  const checkOutDate = moment(req.query.checkOut).format('YYYY-MM-DD');
+  const checkInDate = req.query.checkIn;
+  const checkOutDate = req.query.checkOut;
   const guestsNumber = req.query.guestsNumber;
   const dataItem = data[0];
   let roomsNumber = req.query.roomsNumber;
@@ -72,7 +72,7 @@ const sendResponseWithUpdatedData = (data, req, res) => {
     }
   }
   for (let k = 0; k < newData[0].prices.length; k++) {
-    newData[0].prices[k].price *= totalNights;
+    newData[0].prices[k].price *= totalNights * roomsNumber;
   }
 
   if (response) {

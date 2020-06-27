@@ -51,13 +51,30 @@
   color: white;
 }
 
-.cell-disabled {
-  background-color: lightgrey;
-  color: lightgrey;
+.cell-today {
+  border: 1px solid grey;
+  background-color: green;
+}
+.cell-today:hover {
+  background-color: lightgreen;
+  color: white;
 }
 
-.cell-selected {
+.cell-disabled {
+  background-color: white;
+  color: lightgrey;
+  pointer-events: none;
+}
+
+/* .cell-selected {
   background-color: lightcoral;
+} */
+
+.cell-inactive {
+  border: 1px solid grey;
+  background-color: beige;
+  color: lightgrey;
+  pointer-events: none;
 }
 
 .main-container-header {
