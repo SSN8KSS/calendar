@@ -13,6 +13,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      calendarView: false,
+      guestsView: false,
       currentHotel: [],
       checkIn: false,
       checkOut: false
@@ -20,10 +22,14 @@ class App extends React.Component {
     this.getData = this.getData.bind(this);
     this.getUpdatedData = this.getUpdatedData.bind(this);
     this.calculateAvrgRate = this.calculateAvrgRate.bind(this);
+    this.renderCalendar = this.renderCalendar.bind(this);
+    this.changeCalendarView = this.changeCalendarView.bind(this);
+    this.renderGuests = this.renderGuests.bind(this);
+    this.changeGuestsView = this.changeGuestsView.bind(this);
   }
 
   componentDidMount () {
-    this.getData('digital');
+    this.getData('94');
   }
 
   getData (term) {
@@ -98,6 +104,60 @@ class App extends React.Component {
     }
   }
 
+  changeCalendarView () {
+    this.setState({
+      calendarView: !this.state.calendarView
+    });
+  }
+
+  renderCalendar () {
+    if (!this.state.calendarView) {
+      return (
+        <div>
+          <button onClick={this.changeCalendarView}>CALENDAR</button>
+        </div>
+      );
+    }
+    if (this.state.calendarView) {
+      return (
+        <div>
+          <button onClick={this.changeCalendarView}>CALENDAR</button>
+          <Calendar
+            getUpdatedData={this.getUpdatedData}
+            calculateAvrgRate={this.calculateAvrgRate}/>
+        </div>
+      );
+
+    }
+  }
+
+  changeGuestsView () {
+    this.setState({
+      guestsView: !this.state.guestsView
+    });
+  }
+
+  renderGuests () {
+    if (!this.state.guestsView) {
+      return (
+        <div>
+          <button onClick={this.changeGuestsView}>GUESTS</button>
+        </div>
+      )
+    }
+    if (this.state.guestsView) {
+      return (
+
+        <div>
+          <button onClick={this.changeGuestsView}>GUESTS</button>
+          <Guests getUpdatedData={this.getUpdatedData}/>
+        </div>
+
+      )
+    }
+  }
+
+
   render () {
 
     return (
@@ -105,14 +165,11 @@ class App extends React.Component {
         <div>
           <h5>5 people currently viewing this hotel</h5>
         </div>
-        <div>
-          <Calendar
-            getUpdatedData={this.getUpdatedData}
-            calculateAvrgRate={this.calculateAvrgRate}/>
-        </div>
-        <div>
-          <Guests getUpdatedData={this.getUpdatedData}/>
-        </div>
+
+        <div>{this.renderCalendar()}</div>
+
+        <div>{this.renderGuests()}</div>
+
         <div>
           <BestDeals currentHotel={this.state.currentHotel}/>
         </div>
