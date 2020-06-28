@@ -8,7 +8,7 @@ class Guests extends React.Component {
     this.state = {
       roomsNumber: 1,
       adultsNumber: 2,
-      childrenNumber: 0
+      childrenNumber: 1
     };
     this.handleMinusClick = this.handleMinusClick.bind(this);
     this.handlePlusClick = this.handlePlusClick.bind(this);
