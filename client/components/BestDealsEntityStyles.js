@@ -84,3 +84,50 @@ padding: 10px 22px;
 font-size: 16px;
 line-height: 20px;
 `;
+
+export const BestDealsEntityBottomDiv = styled.div`
+display: block;
+`;
+
+export const BestDealsEntityCancellationDiv = styled.div`
+display: inline-block;
+    margin-right: 8px;
+
+line-height: 12px;
+    font-size: 12px;
+    color: #4a4a4a;
+
+`;
+
+export const BestDealsEntityCancellationCheckSpan = styled.span`
+&:before {
+  display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    line-height: 1;
+    -ms-transform: rotate(-.001deg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+    text-decoration: none;
+    content: "✔"
+}
+
+color: #000;
+font-size: 18px;
+padding-right: 4px;
+`;
+
+export const BestDealsEntityCancellationTextSpan = styled.span`
+
+${props => {
+    if (props.type === 'fat') {
+      return 'font-weight:700;font-size: 14px;';
+    } else {
+      return 'font-weight:400;font-size: 12px;';
+    }
+  }}
+line-height: 12px;
+font-family: 'Trip Sans', Arial, sans-serif;
+`;

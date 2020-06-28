@@ -11,14 +11,14 @@ const BestDeals = ({currentHotel}) => {
     let best = getBestOrRestDeals(currentHotel, 'getBest');
     return (
       <div>
-      <BestDealsWrapper>
-        {best.map((item)=>(
-          <BestDealsEntity
-            item={item}
-            key={item._id}
-          />
-        ))}
-      </BestDealsWrapper>
+        <BestDealsWrapper>
+          {best.map((item)=>(
+            <BestDealsEntity
+              item={item}
+              key={item._id}
+            />
+          ))}
+        </BestDealsWrapper>
       </div>
     );
   }

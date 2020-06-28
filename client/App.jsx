@@ -272,19 +272,19 @@ class App extends React.Component {
 
 
 
-        <DealsWrapper>
+          <DealsWrapper>
 
 
-          {/* <BestDealsWrapper> */}
+            {/* <BestDealsWrapper> */}
             <BestDeals currentHotel={this.state.currentHotel}/>
-          {/* </BestDealsWrapper> */}
+            {/* </BestDealsWrapper> */}
 
-          <AllDealsWrapper>
-            <AllDeals currentHotel={this.state.currentHotel}/>
-          </AllDealsWrapper>
+            <AllDealsWrapper>
+              <AllDeals currentHotel={this.state.currentHotel}/>
+            </AllDealsWrapper>
 
 
-        </DealsWrapper>
+          </DealsWrapper>
 
         </AppWrapper>
       </MainWrapper>

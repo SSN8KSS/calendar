@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  BestDealsEntityDiv, BestDealsEntityHeadDiv, BestDealsEntityLogoDiv, BestDealsEntityPriceDiv, BestDealsEntityButton, BestDealsEntityLogoPicture, BestDealsEntityPriceInnerDiv, BestDealsEntityPriceInnerDivQuote, BestDealsEntityButtonDiv, BestDealsEntityButtonDivSpan
+  BestDealsEntityDiv, BestDealsEntityHeadDiv, BestDealsEntityLogoDiv, BestDealsEntityPriceDiv, BestDealsEntityButton, BestDealsEntityLogoPicture, BestDealsEntityPriceInnerDiv, BestDealsEntityPriceInnerDivQuote, BestDealsEntityButtonDiv, BestDealsEntityButtonDivSpan, BestDealsEntityBottomDiv, BestDealsEntityCancellationDiv, BestDealsEntityCancellationCheckSpan, BestDealsEntityCancellationTextSpan
+  // BestDealsEntityNoticeDiv
 
 } from './BestDealsEntityStyles.js';
 
@@ -15,12 +16,8 @@ const BestDealsEntity = ({item}) => (
           </BestDealsEntityLogoPicture>
         </BestDealsEntityLogoDiv>
 
-
         <BestDealsEntityPriceDiv>
-          {/* <BestDealsEntityPriceInnerDiv> */}
-            <BestDealsEntityPriceInnerDivQuote>${item.price}</BestDealsEntityPriceInnerDivQuote>
-          {/* </BestDealsEntityPriceInnerDiv> */}
-
+          <BestDealsEntityPriceInnerDivQuote>${item.price}</BestDealsEntityPriceInnerDivQuote>
         </BestDealsEntityPriceDiv>
 
         <BestDealsEntityButton>
@@ -30,8 +27,32 @@ const BestDealsEntity = ({item}) => (
         </BestDealsEntityButton>
       </BestDealsEntityHeadDiv>
 
-      {/* <span>{item.serviceName}</span>
-      <span>{item.price}</span> */}
+
+
+      <BestDealsEntityBottomDiv>
+
+
+        <BestDealsEntityCancellationDiv>
+          <BestDealsEntityCancellationCheckSpan></BestDealsEntityCancellationCheckSpan>
+          <BestDealsEntityCancellationTextSpan type="fat">Free cancellation until 09/22/20</BestDealsEntityCancellationTextSpan>
+        </BestDealsEntityCancellationDiv>
+
+
+
+
+        <BestDealsEntityCancellationDiv>
+          <BestDealsEntityCancellationCheckSpan></BestDealsEntityCancellationCheckSpan>
+          <BestDealsEntityCancellationTextSpan type="slim">Reserve now, pay at stay</BestDealsEntityCancellationTextSpan>
+        </BestDealsEntityCancellationDiv>
+
+
+      </BestDealsEntityBottomDiv>
+
+
+
+
+
+
     </BestDealsEntityDiv>
   </div>
 );
