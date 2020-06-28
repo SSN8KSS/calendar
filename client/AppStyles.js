@@ -21,6 +21,7 @@ export const AppWrapper = styled.div`
 
 export const BestDealsWrapper = styled.div`
   background-color: red;
+  margin-top: 10px;
 `;
 
 export const AllDealsWrapper = styled.div`
@@ -28,24 +29,36 @@ export const AllDealsWrapper = styled.div`
 `;
 
 export const CalendarGuestsWrapper = styled.div`
-  display: block;
-  height: auto;
+  // display: block;
+  // height: auto;
+  // padding: 0;
+
+
+
+  display: flex;
+  flex-direction: column;
   padding: 0;
+  height: auto;
 `;
 
 export const DatePickerWrapper = styled.div`
-  height: 100%;
-  vertical-align: top;
-  white-space: normal;
-  text-align: left;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #000a12;
+  // height: 100%;
+  // vertical-align: top;
+  // white-space: normal;
+  // text-align: left;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
+  // color: #000a12;
+
+
+  display: block;
+  flex-direction: row;
+
 `;
 
 export const DatePickerButton = styled.button`
@@ -70,6 +83,17 @@ width: 172.5px;
 `;
 
 export const DatePickerButtonDiv = styled.div`
+&:before {
+  content: ".";
+  display: inline-block;
+  vertical-align: middle;
+  height: 42px;
+  width:10px;
+  ${(props) => {
+    return props.color === 'green' ? 'background-color:#00a680; color:#00a680' : 'background-color:#d91e18; color:#d91e18';
+  }}
+  }
+
 height: 100%;
 background: #fff;
 border: none;
@@ -81,6 +105,7 @@ position: relative;
 
 export const DatePickerButtonDivIconSpan = styled.span`
 //investigate
+
 display: none;
 margin: 0 0 0 4px;
 font-size: 1.25em;
@@ -126,6 +151,8 @@ export const GuestsWrapper = styled.div`
   -ms-user-select: none;
   user-select: none;
   color: #000a12;
+
+  margin-top: 10px;
 `;
 
 export const GuestsButton = styled.button`

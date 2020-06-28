@@ -125,8 +125,8 @@ class App extends React.Component {
       return (
         <div>
 
-          <DatePickerButton>
-            <DatePickerButtonDiv>
+          <DatePickerButton onClick={this.changeCalendarView}>
+            <DatePickerButtonDiv color="green">
               <DatePickerButtonDivIconSpan>
               </DatePickerButtonDivIconSpan>
               <DatePickerButtonDivFieldSpan>
@@ -141,8 +141,8 @@ class App extends React.Component {
           </DatePickerButton>
 
 
-          <DatePickerButton>
-            <DatePickerButtonDiv>
+          <DatePickerButton onClick={this.changeCalendarView}>
+            <DatePickerButtonDiv color="red">
               <DatePickerButtonDivIconSpan>
               </DatePickerButtonDivIconSpan>
               <DatePickerButtonDivFieldSpan>
