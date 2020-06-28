@@ -8,7 +8,7 @@ import moment from 'moment';
 import getDataFromServer from './lib/getDataFromServer.js';
 import getUpdatedDataFromServer from './lib/getUpdatedDataFromServer.js';
 import styled from 'styled-components';
-import {AppWrapper, HeaderWrapper, HeaderSpan, CalendarWrapper, GuestsWrapper, AllDealsWrapper, BestDealsWrapper} from './AppStyles.js';
+import {MainWrapper, AppWrapper, HeaderWrapper, HeaderSpan, CalendarWrapper, GuestsWrapper, AllDealsWrapper, BestDealsWrapper} from './AppStyles.js';
 
 class App extends React.Component {
   constructor (props) {
@@ -181,34 +181,33 @@ class App extends React.Component {
   render () {
 
     return (
-      <AppWrapper>
-        {/* <div className="current-land-container">
-          <span>5 people currently viewing this hotel</span>
-        </div> */}
+      <MainWrapper>
+        <AppWrapper>
 
-        <HeaderWrapper>
-          <HeaderSpan>
-            5 people currently viewing this hotel
-          </HeaderSpan>
-        </HeaderWrapper>
+          <HeaderWrapper>
+            <HeaderSpan>
+              5 people currently viewing this hotel
+            </HeaderSpan>
+          </HeaderWrapper>
 
-        <CalendarWrapper>
-          {this.renderCalendar()}
-        </CalendarWrapper>
+          <CalendarWrapper>
+            {this.renderCalendar()}
+          </CalendarWrapper>
 
-        <GuestsWrapper>
-          {this.renderGuests()}
-        </GuestsWrapper>
+          <GuestsWrapper>
+            {this.renderGuests()}
+          </GuestsWrapper>
 
-        <BestDealsWrapper>
-          <BestDeals currentHotel={this.state.currentHotel}/>
-        </BestDealsWrapper>
+          <BestDealsWrapper>
+            <BestDeals currentHotel={this.state.currentHotel}/>
+          </BestDealsWrapper>
 
-        <AllDealsWrapper>
-          <AllDeals currentHotel={this.state.currentHotel}/>
-        </AllDealsWrapper>
+          <AllDealsWrapper>
+            <AllDeals currentHotel={this.state.currentHotel}/>
+          </AllDealsWrapper>
 
-      </AppWrapper>
+        </AppWrapper>
+      </MainWrapper>
     );
   }
 }

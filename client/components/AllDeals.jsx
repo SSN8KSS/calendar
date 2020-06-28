@@ -6,7 +6,8 @@ class AllDeals extends React.Component {
     super(props);
 
     this.state = {
-      isClicked: false
+      isClicked: false,
+      allDealsView: false
     };
 
     this.renderFour = this.renderFour.bind(this);
@@ -32,7 +33,8 @@ class AllDeals extends React.Component {
 
   onClickHandler () {
     this.setState({
-      isClicked: !this.state.isClicked
+      isClicked: !this.state.isClicked,
+      allDealsView: !this.state.allDealsView
     });
   }
 
@@ -54,11 +56,33 @@ class AllDeals extends React.Component {
     }
   }
 
+  renderAllDeals () {
+    if (!this.state.allDealsView) {
+      return (
+        <div className="allDeals-container">
+          <div className="allDeals-grid">{this.renderFour(this.props.currentHotel)}</div>
+          <button type="button" onClick={this.onClickHandler}>View All</button>
+        </div>
+      );
+    }
+
+    if (this.state.allDealsView) {
+      return (
+        <div>
+          <div className="allDeals-grid">{this.renderFour(this.props.currentHotel)}</div>
+          <div>{this.renderAll()}</div>
+        </div>
+      );
+    }
+  }
+
   render () {
     return (
       <div className="allDeals-container">
 
-        <div className="allDeals-grid">
+        {this.renderAllDeals()}
+
+        {/* <div className="allDeals-grid">
           {this.renderFour(this.props.currentHotel)}
         </div>
 
@@ -70,7 +94,9 @@ class AllDeals extends React.Component {
           }`}>
             {this.renderAll()}
           </div>
-        </div>
+
+
+        </div> */}
       </div>
     );
   }
