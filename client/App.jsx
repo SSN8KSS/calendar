@@ -16,7 +16,8 @@ import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan,
   //datepicker
   DatePickerButton, DatePickerButtonDiv, DatePickerButtonDivIconSpan, DatePickerButtonDivFieldSpan, DatePickerButtonDivFieldSpanCheckIn, DatePickerButtonDivFieldSpanDate,
   //deals
-  AllDealsWrapper, BestDealsWrapper, DealsWrapper,
+  // AllDealsWrapper,
+  BestDealsWrapper, DealsWrapper,
 
 } from './AppStyles.js';
 
@@ -274,14 +275,11 @@ class App extends React.Component {
 
           <DealsWrapper>
 
-
-            {/* <BestDealsWrapper> */}
             <BestDeals currentHotel={this.state.currentHotel}/>
-            {/* </BestDealsWrapper> */}
 
-            <AllDealsWrapper>
+            {/* <AllDealsWrapper> */}
               <AllDeals currentHotel={this.state.currentHotel}/>
-            </AllDealsWrapper>
+            {/* </AllDealsWrapper> */}
 
 
           </DealsWrapper>

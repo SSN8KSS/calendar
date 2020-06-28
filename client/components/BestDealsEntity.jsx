@@ -9,6 +9,7 @@ import {
 const BestDealsEntity = ({item}) => (
   <div>
     <BestDealsEntityDiv>
+
       <BestDealsEntityHeadDiv>
 
         <BestDealsEntityLogoDiv>
@@ -27,31 +28,17 @@ const BestDealsEntity = ({item}) => (
         </BestDealsEntityButton>
       </BestDealsEntityHeadDiv>
 
-
-
       <BestDealsEntityBottomDiv>
-
-
         <BestDealsEntityCancellationDiv>
           <BestDealsEntityCancellationCheckSpan></BestDealsEntityCancellationCheckSpan>
           <BestDealsEntityCancellationTextSpan type="fat">Free cancellation until 09/22/20</BestDealsEntityCancellationTextSpan>
         </BestDealsEntityCancellationDiv>
 
-
-
-
         <BestDealsEntityCancellationDiv>
           <BestDealsEntityCancellationCheckSpan></BestDealsEntityCancellationCheckSpan>
           <BestDealsEntityCancellationTextSpan type="slim">Reserve now, pay at stay</BestDealsEntityCancellationTextSpan>
         </BestDealsEntityCancellationDiv>
-
-
       </BestDealsEntityBottomDiv>
-
-
-
-
-
 
     </BestDealsEntityDiv>
   </div>

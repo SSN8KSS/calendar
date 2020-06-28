@@ -54,7 +54,7 @@ width: 33.33333333%;
 
 export const BestDealsEntityPriceInnerDivQuote = styled.div`
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
   text-align: right;
   padding-top:5px;

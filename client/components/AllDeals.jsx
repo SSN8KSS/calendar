@@ -1,5 +1,7 @@
 import React from 'react';
 import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
+import styled from 'styled-components';
+import {AllDealsWrapper, AllDealsMainDiv, AllDealsBottomDiv, AllDealsEntityOuter, AllDealsEntityInner, AllDealsEntityServiceSpan, AllDealsEntityPriceSpan, AllDealsEntityServiceNameSpan, AllDealsEntityServiceIconSpan} from './AllDealsStyles.js';
 
 class AllDeals extends React.Component {
   constructor (props) {
@@ -22,10 +24,33 @@ class AllDeals extends React.Component {
       let sorted = getBestOrRestDeals(hotels, 'getRest');
       for (var i = 0; i < sorted.length; i++) {
         displaySix.push(
-          <div className="allDeals-line" key={i}>
-            <span>{sorted[i].serviceName}</span>
-            <span>{sorted[i].price}</span>
-          </div>);
+
+          <AllDealsEntityOuter key={i}>
+            <AllDealsEntityInner>
+
+              <AllDealsEntityServiceSpan>
+                <AllDealsEntityServiceNameSpan>
+                {sorted[i].serviceName}
+                </AllDealsEntityServiceNameSpan>
+
+                <AllDealsEntityServiceIconSpan>
+
+                </AllDealsEntityServiceIconSpan>
+              </AllDealsEntityServiceSpan>
+
+
+              <AllDealsEntityPriceSpan>{sorted[i].price}</AllDealsEntityPriceSpan>
+
+            </AllDealsEntityInner>
+          </AllDealsEntityOuter>
+        );
+
+          // <div className="allDeals-line" key={i}>
+          //   <span>{sorted[i].serviceName}</span>
+          //   <span>{sorted[i].price}</span>
+          // </div>);
+
+
       }
       return displaySix.slice(0, 4);
     }
@@ -59,10 +84,28 @@ class AllDeals extends React.Component {
   renderAllDeals () {
     if (!this.state.allDealsView) {
       return (
-        <div className="allDeals-container">
-          <div className="allDeals-grid">{this.renderFour(this.props.currentHotel)}</div>
-          <button type="button" onClick={this.onClickHandler}>View All</button>
-        </div>
+
+        <AllDealsWrapper>
+
+          <AllDealsMainDiv>
+          {this.renderFour(this.props.currentHotel)}
+          </AllDealsMainDiv>
+
+
+          <AllDealsBottomDiv></AllDealsBottomDiv>
+
+
+        </AllDealsWrapper>
+
+
+
+        // <div className="allDeals-container">
+          // <div className="allDeals-grid">{this.renderFour(this.props.currentHotel)}</div>
+          // <button type="button" onClick={this.onClickHandler}>View All</button>
+        // </div>
+
+
+
       );
     }
 
@@ -78,25 +121,8 @@ class AllDeals extends React.Component {
 
   render () {
     return (
-      <div className="allDeals-container">
-
+      <div>
         {this.renderAllDeals()}
-
-        {/* <div className="allDeals-grid">
-          {this.renderFour(this.props.currentHotel)}
-        </div>
-
-        <div style={{'textAlign': 'center'}}>
-          <button type="button" onClick={this.onClickHandler}>View All</button>
-
-          <div className={`viewAll${
-            this.state.isClicked ? '' : '-disabled'
-          }`}>
-            {this.renderAll()}
-          </div>
-
-
-        </div> */}
       </div>
     );
   }

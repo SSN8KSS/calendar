@@ -19,15 +19,6 @@ export const AppWrapper = styled.div`
   height: 100%;
 `;
 
-export const BestDealsWrapper = styled.div`
-  background-color: red;
-  margin-top: 10px;
-`;
-
-export const AllDealsWrapper = styled.div`
-  background-color: orange;
-`;
-
 export const CalendarGuestsWrapper = styled.div`
   // display: block;
   // height: auto;
