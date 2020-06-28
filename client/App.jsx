@@ -15,8 +15,10 @@ import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan,
   GuestsButton, GuestsButtonDiv, GuestsButtonIconSpan, GuestsButtonPickerSpan, GuestsButtonPickerSpanGuestsSpan, GuestsButtonPickerSpanGuestsConfigSpan, GuestsButtonPickerSpanGuestsConfigInnerSpan,
   //datepicker
   DatePickerButton, DatePickerButtonDiv, DatePickerButtonDivIconSpan, DatePickerButtonDivFieldSpan, DatePickerButtonDivFieldSpanCheckIn, DatePickerButtonDivFieldSpanDate,
+  //deals
+  AllDealsWrapper, BestDealsWrapper, DealsWrapper,
 
-  AllDealsWrapper, BestDealsWrapper} from './AppStyles.js';
+} from './AppStyles.js';
 
 class App extends React.Component {
   constructor (props) {
@@ -127,8 +129,7 @@ class App extends React.Component {
 
           <DatePickerButton onClick={this.changeCalendarView}>
             <DatePickerButtonDiv color="green">
-              <DatePickerButtonDivIconSpan>
-              </DatePickerButtonDivIconSpan>
+              <DatePickerButtonDivIconSpan>i</DatePickerButtonDivIconSpan>
               <DatePickerButtonDivFieldSpan>
                 <DatePickerButtonDivFieldSpanCheckIn>
                   Check In
@@ -143,8 +144,7 @@ class App extends React.Component {
 
           <DatePickerButton onClick={this.changeCalendarView}>
             <DatePickerButtonDiv color="red">
-              <DatePickerButtonDivIconSpan>
-              </DatePickerButtonDivIconSpan>
+              <DatePickerButtonDivIconSpan>i</DatePickerButtonDivIconSpan>
               <DatePickerButtonDivFieldSpan>
                 <DatePickerButtonDivFieldSpanCheckIn>
                   Check Out
@@ -156,10 +156,6 @@ class App extends React.Component {
             </DatePickerButtonDiv>
           </DatePickerButton>
 
-
-          {/* <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
-          <div></div>
-          <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div> */}
         </div>
       );
     }
@@ -276,14 +272,19 @@ class App extends React.Component {
 
 
 
+        <DealsWrapper>
 
-          <BestDealsWrapper>
+
+          {/* <BestDealsWrapper> */}
             <BestDeals currentHotel={this.state.currentHotel}/>
-          </BestDealsWrapper>
+          {/* </BestDealsWrapper> */}
 
           <AllDealsWrapper>
             <AllDeals currentHotel={this.state.currentHotel}/>
           </AllDealsWrapper>
+
+
+        </DealsWrapper>
 
         </AppWrapper>
       </MainWrapper>

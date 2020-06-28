@@ -105,9 +105,17 @@ position: relative;
 
 export const DatePickerButtonDivIconSpan = styled.span`
 //investigate
-
-display: none;
-margin: 0 0 0 4px;
+&:before{
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    font-size: inherit;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-decoration: none;
+}
 font-size: 1.25em;
 color: #767676;
 vertical-align: middle;
@@ -137,6 +145,11 @@ display: block;
     font-weight: 700;
     line-height: 20px;
 `;
+
+export const DealsWrapper = styled.div`
+  display: block;
+`;
+
 
 export const GuestsWrapper = styled.div`
   height: 100%;

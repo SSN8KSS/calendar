@@ -1,6 +1,8 @@
 import React from 'react';
 import BestDealsEntity from './BestDealsEntity.jsx';
 import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
+import styled from 'styled-components';
+import {BestDealsWrapper} from './BestDealsStyles.js';
 
 const BestDeals = ({currentHotel}) => {
   if (currentHotel.length === 0 || !currentHotel) {
@@ -8,13 +10,15 @@ const BestDeals = ({currentHotel}) => {
   } else {
     let best = getBestOrRestDeals(currentHotel, 'getBest');
     return (
-      <div className="bestDeals-container">
+      <div>
+      <BestDealsWrapper>
         {best.map((item)=>(
           <BestDealsEntity
             item={item}
             key={item._id}
           />
         ))}
+      </BestDealsWrapper>
       </div>
     );
   }
