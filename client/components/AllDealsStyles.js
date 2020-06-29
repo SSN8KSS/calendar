@@ -67,7 +67,7 @@ export const AllDealsEntityServiceIconSpan = styled.span`
     font-weight: 400;
     line-height: 1;
     // content:'➚';
-    content:'⇱';
+    // content:'⇱';
 }
 display: flex;
 color: #4a4a4a;
@@ -79,6 +79,7 @@ cursor: pointer;
 font-size: 16px;
 padding-top:2px;
 padding-left:2px;
+
 `;
 
 
@@ -122,5 +123,74 @@ color: #000a12;
     cursor: pointer;
     font-size: 12px;
 
+`;
+
+export const ViewAllPortalWrapper = styled.div`
+
+background-color: lightblue;
+  width: 208px;
+  height: auto;
+
+  padding: 4px 16px 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  position: relative;
+  z-index: 20;
+`;
+
+export const ViewAllPortal = styled.div`
+display: flex;
+flex-direction: column;
+width: 160px;
+// font-size: .75rem;
+`;
+
+export const ViewAllPortalLine = styled.div`
+// display: flex;
+  color: #4a4a4a;
+    position: relative;
+    overflow: hidden;
+    min-height: 18px;
+    line-height: 1.5em;
+    cursor: pointer;
+    font-size: 12px;
+    width: 100%;
+`;
+
+export const ViewAllPortalLineServiceDiv = styled.div`
+padding-right: 3px;
+position: relative;
+display: flex;
+max-width: 100px;
+background: #fff;
+    // z-index: 1;
+`;
+
+export const ViewAllPortalLineServiceIcon = styled.span`
+display: inline-block;
+font-style: normal;
+font-weight: 400;
+font-variant: normal;
+font-size: inherit;
+line-height: 1;
+// font-family: TripAdvisor_Regular!important;
+-webkit-font-smoothing: antialiased;
+speak: none;
+`;
+
+export const ViewAllPortalPriceSpan = styled.span`
+position: absolute;
+right: 0;
+padding-left: 3px;
+font-weight: 700;
+color: #000a12;
+line-height: 1.5em;
+    cursor: pointer;
+    font-size: 12px;
 `;
 

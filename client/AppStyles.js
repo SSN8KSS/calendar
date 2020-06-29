@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+// export const PortalTest = styled.h1`
+//   color: red;
+//   top: 0px;
+//   left: 300px;
+//   position:absolute;
+//   z-index: 25;
+// `;
+
 export const AppWrapper = styled.div`
   background-color: lightblue;
   width: 395px;
@@ -223,7 +231,7 @@ font-size: .8125em;
 `;
 
 export const GuestsButtonPickerSpanGuestsConfigInnerSpan = styled.span`
-  font-size: .8125em;
+    font-size: 1em;
     font-weight: 700;
     line-height: 20px;
 `;

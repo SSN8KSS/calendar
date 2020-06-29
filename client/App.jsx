@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Calendar from './components/Calendar.jsx';
 import Guests from './components/Guests.jsx';
@@ -18,12 +19,15 @@ import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan,
   //deals
   // AllDealsWrapper,
   BestDealsWrapper, DealsWrapper,
+  // PortalTest
 
 } from './AppStyles.js';
 
 
-import { faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class App extends React.Component {
   constructor (props) {
@@ -34,7 +38,8 @@ class App extends React.Component {
       guestsView: false,
       currentHotel: [],
       checkIn: false,
-      checkOut: false
+      checkOut: false,
+      // testClick: false,
     };
     this.getData = this.getData.bind(this);
     this.getUpdatedData = this.getUpdatedData.bind(this);
@@ -43,10 +48,12 @@ class App extends React.Component {
     this.changeCalendarView = this.changeCalendarView.bind(this);
     this.renderGuests = this.renderGuests.bind(this);
     this.changeGuestsView = this.changeGuestsView.bind(this);
+    // this.testClick = this.testClick.bind(this);
+    // this.testPortal = this.testPortal.bind(this);
   }
 
   componentDidMount () {
-    this.getData('digital');
+    this.getData('94');
   }
 
   getData (term) {
@@ -153,7 +160,7 @@ class App extends React.Component {
 
           <DatePickerButton onClick={this.changeCalendarView}>
             <DatePickerButtonDiv color="red">
-            <DatePickerButtonDivIconSpan>
+              <DatePickerButtonDivIconSpan>
                 <FontAwesomeIcon icon={faCalendarAlt}/>
               </DatePickerButtonDivIconSpan>
               <DatePickerButtonDivFieldSpan>
@@ -161,7 +168,7 @@ class App extends React.Component {
                   Check Out
                 </DatePickerButtonDivFieldSpanCheckIn>
                 <DatePickerButtonDivFieldSpanDate>
-                <span>{moment().add(1,'day').format('ddd')}, {moment().add(1,'day').format('MM/DD/YYYY')}</span>
+                  <span>{moment().add(1, 'day').format('ddd')}, {moment().add(1, 'day').format('MM/DD/YYYY')}</span>
                 </DatePickerButtonDivFieldSpanDate>
               </DatePickerButtonDivFieldSpan>
             </DatePickerButtonDiv>
@@ -247,6 +254,19 @@ class App extends React.Component {
     }
   }
 
+  // testClick () {
+  //   this.setState({
+  //     testClick: !this.state.testClick
+  //   })
+  // }
+
+  // testPortal () {
+  //   if(!this.state.testClick) {
+  //     return (<Modal></Modal>)
+  //   } else {
+  //     return <div>Nothing</div>
+  //   }
+  // }
 
   render () {
 
@@ -284,10 +304,26 @@ class App extends React.Component {
             <AllDeals currentHotel={this.state.currentHotel}/>
           </DealsWrapper>
 
+          {/* <button onClick={this.testClick}>CLICK</button>
+          {this.testPortal()} */}
+
         </AppWrapper>
+
       </MainWrapper>
     );
   }
 }
+
+// const domPortal = document.getElementById('modal-root');
+
+// const Modal = () => {
+
+//   return ReactDOM.createPortal(
+
+//     <PortalTest>Portal Works</PortalTest>
+
+//     , domPortal
+//   );
+// }
 
 export default App;
