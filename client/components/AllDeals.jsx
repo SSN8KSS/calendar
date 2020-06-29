@@ -1,7 +1,10 @@
 import React from 'react';
 import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
 import styled from 'styled-components';
-import {AllDealsWrapper, AllDealsMainDiv, AllDealsBottomDiv, AllDealsEntityOuter, AllDealsEntityInner, AllDealsEntityServiceSpan, AllDealsEntityPriceSpan, AllDealsEntityServiceNameSpan, AllDealsEntityServiceIconSpan} from './AllDealsStyles.js';
+import {AllDealsWrapper, AllDealsMainDiv, AllDealsBottomDiv, AllDealsEntityOuter, AllDealsEntityInner, AllDealsEntityServiceSpan, AllDealsEntityPriceSpan, AllDealsEntityServiceNameSpan, AllDealsEntityServiceIconSpan, ViewAllWrapper, ViewAllDiv} from './AllDealsStyles.js';
+
+import { faCaretDown} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class AllDeals extends React.Component {
   constructor (props) {
@@ -39,7 +42,7 @@ class AllDeals extends React.Component {
               </AllDealsEntityServiceSpan>
 
 
-              <AllDealsEntityPriceSpan>{sorted[i].price}</AllDealsEntityPriceSpan>
+              <AllDealsEntityPriceSpan>${sorted[i].price}</AllDealsEntityPriceSpan>
 
             </AllDealsEntityInner>
           </AllDealsEntityOuter>
@@ -91,8 +94,15 @@ class AllDeals extends React.Component {
           {this.renderFour(this.props.currentHotel)}
           </AllDealsMainDiv>
 
+          <ViewAllWrapper onClick={this.onClickHandler}>
+            <ViewAllDiv>View all 10 deals
+              <FontAwesomeIcon icon={faCaretDown}/>
+            </ViewAllDiv>
+          </ViewAllWrapper>
 
-          <AllDealsBottomDiv></AllDealsBottomDiv>
+          <AllDealsBottomDiv>
+          Prices are the average nightly price provided by our partners and may not include all taxes and fees. Taxes and fees that are shown are estimates only. Please see our partners for more details.
+          </AllDealsBottomDiv>
 
 
         </AllDealsWrapper>

@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  BestDealsEntityDiv, BestDealsEntityHeadDiv, BestDealsEntityLogoDiv, BestDealsEntityPriceDiv, BestDealsEntityButton, BestDealsEntityLogoPicture, BestDealsEntityPriceInnerDiv, BestDealsEntityPriceInnerDivQuote, BestDealsEntityButtonDiv, BestDealsEntityButtonDivSpan, BestDealsEntityBottomDiv, BestDealsEntityCancellationDiv, BestDealsEntityCancellationCheckSpan, BestDealsEntityCancellationTextSpan
+  BestDealsEntityDiv, BestDealsEntityHeadDiv, BestDealsEntityLogoDiv, BestDealsEntityPriceDiv, BestDealsEntityButton, BestDealsEntityLogoPicture, BestDealsEntityPriceInnerDiv, BestDealsEntityPriceInnerDivQuote, BestDealsEntityButtonDiv, BestDealsEntityButtonDivSpan, BestDealsEntityBottomDiv, BestDealsEntityCancellationDiv, BestDealsEntityCancellationTextSpan
   // BestDealsEntityNoticeDiv
 
 } from './BestDealsEntityStyles.js';
+
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BestDealsEntity = ({item}) => (
   <div>
@@ -30,12 +33,12 @@ const BestDealsEntity = ({item}) => (
 
       <BestDealsEntityBottomDiv>
         <BestDealsEntityCancellationDiv>
-          <BestDealsEntityCancellationCheckSpan></BestDealsEntityCancellationCheckSpan>
+          <FontAwesomeIcon icon={faCheck}/>
           <BestDealsEntityCancellationTextSpan type="fat">Free cancellation until 09/22/20</BestDealsEntityCancellationTextSpan>
         </BestDealsEntityCancellationDiv>
 
         <BestDealsEntityCancellationDiv>
-          <BestDealsEntityCancellationCheckSpan></BestDealsEntityCancellationCheckSpan>
+          <FontAwesomeIcon icon={faCheck}/>
           <BestDealsEntityCancellationTextSpan type="slim">Reserve now, pay at stay</BestDealsEntityCancellationTextSpan>
         </BestDealsEntityCancellationDiv>
       </BestDealsEntityBottomDiv>

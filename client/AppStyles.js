@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const AppWrapper = styled.div`
   background-color: lightblue;
   width: 395px;
-  height: 483px;
+  height: 487px;
 
   padding: 4px 16px 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
@@ -16,16 +16,12 @@ export const AppWrapper = styled.div`
   border-color: #e0e0e0;
   position: relative;
   z-index: 20;
-  height: 100%;
 `;
 
 export const CalendarGuestsWrapper = styled.div`
   // display: block;
   // height: auto;
   // padding: 0;
-
-
-
   display: flex;
   flex-direction: column;
   padding: 0;

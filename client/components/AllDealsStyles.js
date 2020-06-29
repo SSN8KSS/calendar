@@ -36,7 +36,6 @@ margin: 0;
     cursor: pointer;
     font-size: 12px;
 
-    min-height: 18px;
 `;
 
 export const AllDealsEntityServiceSpan = styled.span`
@@ -59,7 +58,6 @@ line-height: 1.5em;
 cursor: pointer;
 font-size: 12px;
 
-min-height: 18px;
 `;
 
 export const AllDealsEntityServiceIconSpan = styled.span`
@@ -68,7 +66,8 @@ export const AllDealsEntityServiceIconSpan = styled.span`
     font-style: normal;
     font-weight: 400;
     line-height: 1;
-    content:'➚'
+    // content:'➚';
+    content:'⇱';
 }
 display: flex;
 color: #4a4a4a;
@@ -91,11 +90,37 @@ position: absolute;
     color: #000a12;
 
     min-height: 18px;
-    min-height: 18px;
 
 `;
 
 export const AllDealsBottomDiv = styled.div`
+margin: 8px 0 12px;
+font-size: 13px;
+line-height: 17px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: #767676;
+cursor: pointer;
+`;
+
+export const ViewAllWrapper = styled.div`
+flex-shrink: 1;
+    padding: 2px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    display: block;
+`;
+
+export const ViewAllDiv = styled.div`
+color: #000a12;
+    font-weight: 700;
+    height: 18px;
+    line-height: 1.5em;
+    cursor: pointer;
+    font-size: 12px;
 
 `;
 

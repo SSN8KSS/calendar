@@ -269,19 +269,9 @@ class App extends React.Component {
           </CalendarGuestsWrapper>
 
 
-
-
-
-
           <DealsWrapper>
-
             <BestDeals currentHotel={this.state.currentHotel}/>
-
-            {/* <AllDealsWrapper> */}
-              <AllDeals currentHotel={this.state.currentHotel}/>
-            {/* </AllDealsWrapper> */}
-
-
+            <AllDeals currentHotel={this.state.currentHotel}/>
           </DealsWrapper>
 
         </AppWrapper>
