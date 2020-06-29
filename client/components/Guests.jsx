@@ -108,7 +108,7 @@ class Guests extends React.Component {
         {lines}
         <Children childrenNumber={this.state.childrenNumber}/>
         <UpdateButtonDiv>
-          <UpdateButton>Update</UpdateButton>
+          <UpdateButton onClick={this.handleUpdateClick}>Update</UpdateButton>
         </UpdateButtonDiv>
       </GuestsWrapper>
 

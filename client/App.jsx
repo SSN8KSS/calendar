@@ -37,7 +37,6 @@ class App extends React.Component {
       currentHotel: [],
       checkIn: false,
       checkOut: false,
-      // testClick: false,
     };
     this.getData = this.getData.bind(this);
     this.getUpdatedData = this.getUpdatedData.bind(this);
@@ -50,7 +49,7 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getData('94');
+    this.getData('92');
   }
 
   getData (term) {
@@ -205,29 +204,29 @@ class App extends React.Component {
   renderGuestsBasics () {
     return (
       <GuestsButton onClick={this.changeGuestsView}>
-      <GuestsButtonDiv>
-        <GuestsButtonIconSpan></GuestsButtonIconSpan>
+        <GuestsButtonDiv>
+          <GuestsButtonIconSpan></GuestsButtonIconSpan>
 
-        <GuestsButtonPickerSpan>
+          <GuestsButtonPickerSpan>
 
-          <GuestsButtonPickerSpanGuestsSpan>Guests
-          </GuestsButtonPickerSpanGuestsSpan>
+            <GuestsButtonPickerSpanGuestsSpan>Guests
+            </GuestsButtonPickerSpanGuestsSpan>
 
-          <GuestsButtonPickerSpanGuestsConfigSpan>
-            <span>
-              <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 room,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+            <GuestsButtonPickerSpanGuestsConfigSpan>
+              <span>
+                <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 room,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
 
-              <GuestsButtonPickerSpanGuestsConfigInnerSpan> 2 adults,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+                <GuestsButtonPickerSpanGuestsConfigInnerSpan> 2 adults,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
 
-              <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 child</GuestsButtonPickerSpanGuestsConfigInnerSpan>
-            </span>
-          </GuestsButtonPickerSpanGuestsConfigSpan>
+                <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 child</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+              </span>
+            </GuestsButtonPickerSpanGuestsConfigSpan>
 
-        </GuestsButtonPickerSpan>
+          </GuestsButtonPickerSpan>
 
-      </GuestsButtonDiv>
-    </GuestsButton>
-    )
+        </GuestsButtonDiv>
+      </GuestsButton>
+    );
   }
 
   renderGuests () {
@@ -257,7 +256,7 @@ class App extends React.Component {
       //       <Guests getUpdatedData={this.getUpdatedData}/>
       //     </div>
       // </div>
-    )
+    );
   }
 
   // testClick () {
