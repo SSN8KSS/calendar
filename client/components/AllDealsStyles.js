@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const AllDealsWrapper = styled.div`
 margin-top: 8px;
 display: block;
+font-family: 'Poppins', sans-serif;
 `;
 
 export const AllDealsMainDiv = styled.div`
@@ -139,8 +140,11 @@ background-color: lightblue;
   border-width: 1px;
   border-style: solid;
   border-color: #e0e0e0;
-  position: relative;
-  z-index: 20;
+  //think
+  position: absolute;
+  z-index: 25;
+  top:400px;
+  left: 300px;
 `;
 
 export const ViewAllPortal = styled.div`
@@ -154,43 +158,45 @@ export const ViewAllPortalLine = styled.div`
 // display: flex;
   color: #4a4a4a;
     position: relative;
-    overflow: hidden;
     min-height: 18px;
     line-height: 1.5em;
     cursor: pointer;
     font-size: 12px;
     width: 100%;
+    padding-top:10px;
 `;
 
-export const ViewAllPortalLineServiceDiv = styled.div`
-padding-right: 3px;
-position: relative;
-display: flex;
-max-width: 100px;
-background: #fff;
-    // z-index: 1;
+export const ViewPortalLineDiv = styled.div`
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 0px;
+  color: #4a4a4a;
+  min-height: 18px;
+  line-height: 1.5em;
+  cursor: pointer;
+  font-size: 12px;
 `;
 
-export const ViewAllPortalLineServiceIcon = styled.span`
-display: inline-block;
-font-style: normal;
-font-weight: 400;
-font-variant: normal;
-font-size: inherit;
-line-height: 1;
-// font-family: TripAdvisor_Regular!important;
--webkit-font-smoothing: antialiased;
-speak: none;
+export const ViewAllPortalLineInnerDiv = styled.div`
+  color: black;
 `;
 
-export const ViewAllPortalPriceSpan = styled.span`
-position: absolute;
-right: 0;
-padding-left: 3px;
-font-weight: 700;
-color: #000a12;
-line-height: 1.5em;
-    cursor: pointer;
-    font-size: 12px;
+export const ViewPortalLineNameSpan = styled.span`
+  padding-left:5px;
+  color: #4a4a4a
 `;
 
+export const ViewPortalLinePriceSpan = styled.span`
+  font-weight:700;
+  padding-left: 3px;
+  color: #000a12;
+  line-height: 1.5em;
+  cursor: pointer;
+  font-size: 12px;
+`;
+
+export const ViewAllPortalLineIconSpan = styled.span`
+  color: black;
+`;

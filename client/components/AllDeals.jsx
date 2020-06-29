@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
 import styled from 'styled-components';
-import {AllDealsWrapper, AllDealsMainDiv, AllDealsBottomDiv, AllDealsEntityOuter, AllDealsEntityInner, AllDealsEntityServiceSpan, AllDealsEntityPriceSpan, AllDealsEntityServiceNameSpan, AllDealsEntityServiceIconSpan, ViewAllWrapper, ViewAllDiv, ViewAllPortalWrapper, ViewAllPortal, ViewAllPortalLine, ViewAllPortalLineServiceDiv, ViewAllPortalLineServiceIcon, ViewAllPortalPriceSpan} from './AllDealsStyles.js';
+import {AllDealsWrapper, AllDealsMainDiv, AllDealsBottomDiv, AllDealsEntityOuter, AllDealsEntityInner, AllDealsEntityServiceSpan, AllDealsEntityPriceSpan, AllDealsEntityServiceNameSpan, AllDealsEntityServiceIconSpan, ViewAllWrapper, ViewAllDiv, ViewAllPortalWrapper, ViewAllPortal, ViewAllPortalLine, ViewPortalLineDiv, ViewPortalLineNameSpan, ViewPortalLinePriceSpan, ViewAllPortalLineIconSpan, ViewAllPortalLineInnerDiv} from './AllDealsStyles.js';
 
 import { faCaretDown, faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -71,30 +71,39 @@ class AllDeals extends React.Component {
         rates.push(
 
           <div key={i}>
+            <ViewPortalLineDiv>
+              <ViewAllPortalLineInnerDiv>
 
-            <ViewAllPortalLineServiceDiv>
-              {hotels[0].prices[i].serviceName}
-              <ViewAllPortalLineServiceIcon>
-                <FontAwesomeIcon icon={faExternalLinkAlt} size='xs'/>
-              </ViewAllPortalLineServiceIcon>
-            </ViewAllPortalLineServiceDiv>
+                <ViewPortalLineNameSpan>
+                  {hotels[0].prices[i].serviceName}
+                </ViewPortalLineNameSpan>
 
-            <ViewAllPortalPriceSpan>${hotels[0].prices[i].price}</ViewAllPortalPriceSpan>
+                <ViewAllPortalLineIconSpan>
+                  <FontAwesomeIcon icon={faExternalLinkAlt} size='xs'/>
+                </ViewAllPortalLineIconSpan>
+              </ViewAllPortalLineInnerDiv>
 
+              <ViewPortalLinePriceSpan>
+              ${hotels[0].prices[i].price}
+              </ViewPortalLinePriceSpan>
+
+            </ViewPortalLineDiv>
 
           </div>
 
         );
       }
-      // return rates;
       return ReactDOM.createPortal(
         <ViewAllPortalWrapper>
           <ViewAllPortal>
             <ViewAllPortalLine>
-              {rates}
+              <div>
+                {rates}
+              </div>
             </ViewAllPortalLine>
           </ViewAllPortal>
-        </ViewAllPortalWrapper>,
+        </ViewAllPortalWrapper>
+        ,
         document.getElementById('viewAll'));
     }
   }
@@ -119,7 +128,6 @@ class AllDeals extends React.Component {
         Prices are the average nightly price provided by our partners and may not include all taxes and fees. Taxes and fees that are shown are estimates only. Please see our partners for more details.
         </AllDealsBottomDiv>
 
-
       </AllDealsWrapper>
 
     // <div className="allDeals-container">
@@ -141,10 +149,6 @@ class AllDeals extends React.Component {
           {this.renderAll()}
         </div>
 
-      // <div>
-      //   <div className="allDeals-grid">{this.renderFour(this.props.currentHotel)}</div>
-      //   <div>{this.renderAll()}</div>
-      // </div>
       );
     }
   }

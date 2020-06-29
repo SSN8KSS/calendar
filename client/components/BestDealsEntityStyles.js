@@ -7,6 +7,7 @@ export const BestDealsEntityButtonDiv = styled.div`
   border-color: #f2b203;
   background-color: #f2b203;
   color: #000;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const BestDealsEntityDiv = styled.div`
@@ -22,7 +23,6 @@ export const BestDealsEntityDiv = styled.div`
   }
 
   color: white;
-  font-family: 'Trip Sans', Arial, sans-serif;
   cursor: pointer;
   color: #000;
   position: relative;
@@ -69,12 +69,11 @@ export const BestDealsEntityPriceInnerDiv = styled.div`
 `;
 
 export const BestDealsEntityPriceInnerDivQuote = styled.div`
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   line-height: normal;
   text-align: right;
   padding-top:5px;
-  font-family: 'Trip Sans', Arial, sans-serif;
   padding-right: 5px;
 `;
 
@@ -86,7 +85,7 @@ export const BestDealsEntityButton = styled.div`
 export const BestDealsEntityButtonDivSpan = styled.span`
   display: block;
   padding: 10px 22px;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 20px;
 `;
 
@@ -111,6 +110,5 @@ ${props => {
     }
   }}
   line-height: 12px;
-  font-family: 'Trip Sans', Arial, sans-serif;
   padding-left: 5px;
 `;

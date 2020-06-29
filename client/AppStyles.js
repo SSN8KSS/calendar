@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
-// export const PortalTest = styled.h1`
-//   color: red;
-//   top: 0px;
-//   left: 300px;
-//   position:absolute;
-//   z-index: 25;
-// `;
+
 
 export const AppWrapper = styled.div`
   background-color: lightblue;
@@ -24,6 +18,7 @@ export const AppWrapper = styled.div`
   border-color: #e0e0e0;
   position: relative;
   z-index: 20;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const CalendarGuestsWrapper = styled.div`
@@ -69,7 +64,6 @@ background: #fff;
 padding: 0;
 text-align: left;
 font-size: inherit;
-font-family: inherit;
 border: 1px solid #d6d6d6;
 border-radius: 3px;
 box-shadow: 0 1px 2px rgba(0,0,0,.1);
@@ -181,7 +175,6 @@ background: #fff;
 padding: 0;
 text-align: left;
 font-size: inherit;
-font-family: inherit;
 border: 1px solid #d6d6d6;
 border-radius: 3px;
 box-shadow: 0 1px 2px rgba(0,0,0,.1);
@@ -280,6 +273,6 @@ export const MainWrapper = styled.div`
   display: block;
   width: 419px;
   height: 507px;
-  font-family: 'Trip Sans', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 `;
 
