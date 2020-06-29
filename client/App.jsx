@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Calendar from './components/Calendar.jsx';
 import Guests from './components/Guests.jsx';
@@ -7,6 +8,26 @@ import AllDeals from './components/AllDeals.jsx';
 import moment from 'moment';
 import getDataFromServer from './lib/getDataFromServer.js';
 import getUpdatedDataFromServer from './lib/getUpdatedDataFromServer.js';
+import styled from 'styled-components';
+import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan, HeaderTextSpan,
+
+  CalendarGuestsWrapper, DatePickerWrapper, GuestsWrapper,
+  //guests
+  GuestsButton, GuestsButtonDiv, GuestsButtonIconSpan, GuestsButtonPickerSpan, GuestsButtonPickerSpanGuestsSpan, GuestsButtonPickerSpanGuestsConfigSpan, GuestsButtonPickerSpanGuestsConfigInnerSpan,
+  //datepicker
+  DatePickerButton, DatePickerButtonDiv, DatePickerButtonDivIconSpan, DatePickerButtonDivFieldSpan, DatePickerButtonDivFieldSpanCheckIn, DatePickerButtonDivFieldSpanDate,
+  //deals
+  // AllDealsWrapper,
+  BestDealsWrapper, DealsWrapper,
+  // PortalTest
+
+} from './AppStyles.js';
+
+
+
+import { faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class App extends React.Component {
   constructor (props) {
@@ -17,7 +38,8 @@ class App extends React.Component {
       guestsView: false,
       currentHotel: [],
       checkIn: false,
-      checkOut: false
+      checkOut: false,
+      // testClick: false,
     };
     this.getData = this.getData.bind(this);
     this.getUpdatedData = this.getUpdatedData.bind(this);
@@ -26,6 +48,8 @@ class App extends React.Component {
     this.changeCalendarView = this.changeCalendarView.bind(this);
     this.renderGuests = this.renderGuests.bind(this);
     this.changeGuestsView = this.changeGuestsView.bind(this);
+    // this.testClick = this.testClick.bind(this);
+    // this.testPortal = this.testPortal.bind(this);
   }
 
   componentDidMount () {
@@ -113,11 +137,42 @@ class App extends React.Component {
   renderCalendar () {
     if (!this.state.calendarView) {
       return (
-        <div className="cal-land-container">
+        <div>
 
-          <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
-          <div></div>
-          <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div>
+          <DatePickerButton onClick={this.changeCalendarView}>
+            <DatePickerButtonDiv color="green">
+
+              <DatePickerButtonDivIconSpan>
+                <FontAwesomeIcon icon={faCalendarAlt}/>
+              </DatePickerButtonDivIconSpan>
+
+              <DatePickerButtonDivFieldSpan>
+                <DatePickerButtonDivFieldSpanCheckIn>
+                  Check In
+                </DatePickerButtonDivFieldSpanCheckIn>
+                <DatePickerButtonDivFieldSpanDate>
+                  <span>{moment().format('ddd')}, {moment().format('MM/DD/YYYY')}</span>
+                </DatePickerButtonDivFieldSpanDate>
+              </DatePickerButtonDivFieldSpan>
+            </DatePickerButtonDiv>
+          </DatePickerButton>
+
+
+          <DatePickerButton onClick={this.changeCalendarView}>
+            <DatePickerButtonDiv color="red">
+              <DatePickerButtonDivIconSpan>
+                <FontAwesomeIcon icon={faCalendarAlt}/>
+              </DatePickerButtonDivIconSpan>
+              <DatePickerButtonDivFieldSpan>
+                <DatePickerButtonDivFieldSpanCheckIn>
+                  Check Out
+                </DatePickerButtonDivFieldSpanCheckIn>
+                <DatePickerButtonDivFieldSpanDate>
+                  <span>{moment().add(1, 'day').format('ddd')}, {moment().add(1, 'day').format('MM/DD/YYYY')}</span>
+                </DatePickerButtonDivFieldSpanDate>
+              </DatePickerButtonDivFieldSpan>
+            </DatePickerButtonDiv>
+          </DatePickerButton>
 
         </div>
       );
@@ -153,9 +208,33 @@ class App extends React.Component {
   renderGuests () {
     if (!this.state.guestsView) {
       return (
-        <div className="guests-land-container">
-          <div onClick={this.changeGuestsView}>Guests</div>
-        </div>
+        // <div className="guests-land-container">
+        //   <div onClick={this.changeGuestsView}>Guests</div>
+        // </div>
+        <GuestsButton onClick={this.changeGuestsView}>
+          <GuestsButtonDiv>
+            <GuestsButtonIconSpan></GuestsButtonIconSpan>
+
+            <GuestsButtonPickerSpan>
+
+              <GuestsButtonPickerSpanGuestsSpan>Guests
+              </GuestsButtonPickerSpanGuestsSpan>
+
+              <GuestsButtonPickerSpanGuestsConfigSpan>
+                <span>
+                  <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 room,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+
+                  <GuestsButtonPickerSpanGuestsConfigInnerSpan> 2 adults,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+
+                  <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 child</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+                </span>
+              </GuestsButtonPickerSpanGuestsConfigSpan>
+
+            </GuestsButtonPickerSpan>
+
+          </GuestsButtonDiv>
+        </GuestsButton>
+
       );
     }
     if (this.state.guestsView) {
@@ -175,29 +254,76 @@ class App extends React.Component {
     }
   }
 
+  // testClick () {
+  //   this.setState({
+  //     testClick: !this.state.testClick
+  //   })
+  // }
+
+  // testPortal () {
+  //   if(!this.state.testClick) {
+  //     return (<Modal></Modal>)
+  //   } else {
+  //     return <div>Nothing</div>
+  //   }
+  // }
 
   render () {
 
     return (
-      <div>
-        <div className="current-land-container">
-          <span>5 people currently viewing this hotel</span>
-        </div>
+      <MainWrapper>
+        <AppWrapper>
 
-        <div>{this.renderCalendar()}</div>
+          <HeaderWrapper>
+            <HeaderTextBlock>
+              <HeaderIconSpan>
 
-        <div>{this.renderGuests()}</div>
+              </HeaderIconSpan>
+              <HeaderTextSpan>
+                6 people are viewing this hotel
+              </HeaderTextSpan>
+            </HeaderTextBlock>
+          </HeaderWrapper>
 
-        <div>
-          <BestDeals currentHotel={this.state.currentHotel}/>
-        </div>
 
-        <div>
-          <AllDeals currentHotel={this.state.currentHotel}/>
-        </div>
-      </div>
+          <CalendarGuestsWrapper>
+
+            <DatePickerWrapper>
+              {this.renderCalendar()}
+            </DatePickerWrapper>
+
+            <GuestsWrapper>
+              {this.renderGuests()}
+            </GuestsWrapper>
+
+          </CalendarGuestsWrapper>
+
+
+          <DealsWrapper>
+            <BestDeals currentHotel={this.state.currentHotel}/>
+            <AllDeals currentHotel={this.state.currentHotel}/>
+          </DealsWrapper>
+
+          {/* <button onClick={this.testClick}>CLICK</button>
+          {this.testPortal()} */}
+
+        </AppWrapper>
+
+      </MainWrapper>
     );
   }
 }
+
+// const domPortal = document.getElementById('modal-root');
+
+// const Modal = () => {
+
+//   return ReactDOM.createPortal(
+
+//     <PortalTest>Portal Works</PortalTest>
+
+//     , domPortal
+//   );
+// }
 
 export default App;
