@@ -1,5 +1,11 @@
 import React from 'react';
 import Children from './Children.jsx';
+import styled from 'styled-components';
+import {GuestsWrapper, GuestsInnerLine, GuestsInnerLineConfig, GuestsInnerLineConfigButton, GuestsInnerLineConfigField, GuestsInnerLineConfigButtonSpan, GuestsInnerLineLabel, GuestsInnerLineLabelIcon, CloseButton, UpdateButtonDiv, UpdateButton} from './GuestsStyles.js';
+
+
+import { faMinus, faPlus, faBed} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Guests extends React.Component {
   constructor () {
@@ -60,35 +66,54 @@ class Guests extends React.Component {
   }
 
   render () {
-    let links = {'state': ['roomsNumber', 'adultsNumber', 'childrenNumber']};
+    let links = {'state': ['roomsNumber', 'adultsNumber', 'childrenNumber'], 'labels': ['Rooms', 'Adults', 'Children']};
     const lines = [];
     for (let i = 0; i < 3; i++) {
       lines.push(
-        <div className='guests-line' key={i}>
-          <span>icon</span>
-          <span>#</span>
 
-          <span data-id={i} onClick={this.handleMinusClick}>minus</span>
+        <GuestsInnerLine key={i}>
+          <GuestsInnerLineConfig>
 
-          <span>{this.state[links.state[i]]}</span>
+            <GuestsInnerLineConfigButton data-id={i} onClick={this.handleMinusClick}>
+              <GuestsInnerLineConfigButtonSpan>
+                <FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
+              </GuestsInnerLineConfigButtonSpan>
+            </GuestsInnerLineConfigButton>
 
-          <span data-id={i} onClick={this.handlePlusClick}>plus</span>
-        </div>
+            <GuestsInnerLineConfigField>{this.state[links.state[i]]}</GuestsInnerLineConfigField>
+
+            <GuestsInnerLineConfigButton data-id={i} onClick={this.handlePlusClick}>
+              <GuestsInnerLineConfigButtonSpan>
+                <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+              </GuestsInnerLineConfigButtonSpan>
+            </GuestsInnerLineConfigButton>
+          </GuestsInnerLineConfig>
+
+
+          <GuestsInnerLineLabel>
+            <GuestsInnerLineLabelIcon>
+              <FontAwesomeIcon icon={faBed}></FontAwesomeIcon>
+            </GuestsInnerLineLabelIcon>
+            {links.labels[i]}
+          </GuestsInnerLineLabel>
+
+
+        </GuestsInnerLine>
+
       );
     }
     return (
-      <div className='guests-container'>
-        <div>{lines}</div>
+      <GuestsWrapper>
+        <CloseButton onClick={this.props.changeGuestsView}></CloseButton>
+        {lines}
+        <Children childrenNumber={this.state.childrenNumber}/>
+        <UpdateButtonDiv>
+          <UpdateButton>Update</UpdateButton>
+        </UpdateButtonDiv>
+      </GuestsWrapper>
 
-        <div>
-          <Children childrenNumber={this.state.childrenNumber}/>
-        </div>
 
-        <div>
-          <button onClick={this.handleUpdateClick}>UPDATE</button>
-        </div>
 
-      </div>
     );
   }
 }

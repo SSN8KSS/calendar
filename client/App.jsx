@@ -23,8 +23,6 @@ import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan,
 
 } from './AppStyles.js';
 
-
-
 import { faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -48,8 +46,7 @@ class App extends React.Component {
     this.changeCalendarView = this.changeCalendarView.bind(this);
     this.renderGuests = this.renderGuests.bind(this);
     this.changeGuestsView = this.changeGuestsView.bind(this);
-    // this.testClick = this.testClick.bind(this);
-    // this.testPortal = this.testPortal.bind(this);
+
   }
 
   componentDidMount () {
@@ -205,53 +202,62 @@ class App extends React.Component {
     });
   }
 
+  renderGuestsBasics () {
+    return (
+      <GuestsButton onClick={this.changeGuestsView}>
+      <GuestsButtonDiv>
+        <GuestsButtonIconSpan></GuestsButtonIconSpan>
+
+        <GuestsButtonPickerSpan>
+
+          <GuestsButtonPickerSpanGuestsSpan>Guests
+          </GuestsButtonPickerSpanGuestsSpan>
+
+          <GuestsButtonPickerSpanGuestsConfigSpan>
+            <span>
+              <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 room,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+
+              <GuestsButtonPickerSpanGuestsConfigInnerSpan> 2 adults,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+
+              <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 child</GuestsButtonPickerSpanGuestsConfigInnerSpan>
+            </span>
+          </GuestsButtonPickerSpanGuestsConfigSpan>
+
+        </GuestsButtonPickerSpan>
+
+      </GuestsButtonDiv>
+    </GuestsButton>
+    )
+  }
+
   renderGuests () {
     if (!this.state.guestsView) {
-      return (
-        // <div className="guests-land-container">
-        //   <div onClick={this.changeGuestsView}>Guests</div>
-        // </div>
-        <GuestsButton onClick={this.changeGuestsView}>
-          <GuestsButtonDiv>
-            <GuestsButtonIconSpan></GuestsButtonIconSpan>
-
-            <GuestsButtonPickerSpan>
-
-              <GuestsButtonPickerSpanGuestsSpan>Guests
-              </GuestsButtonPickerSpanGuestsSpan>
-
-              <GuestsButtonPickerSpanGuestsConfigSpan>
-                <span>
-                  <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 room,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
-
-                  <GuestsButtonPickerSpanGuestsConfigInnerSpan> 2 adults,</GuestsButtonPickerSpanGuestsConfigInnerSpan>
-
-                  <GuestsButtonPickerSpanGuestsConfigInnerSpan> 1 child</GuestsButtonPickerSpanGuestsConfigInnerSpan>
-                </span>
-              </GuestsButtonPickerSpanGuestsConfigSpan>
-
-            </GuestsButtonPickerSpan>
-
-          </GuestsButtonDiv>
-        </GuestsButton>
-
-      );
+      return this.renderGuestsBasics();
     }
     if (this.state.guestsView) {
       return (
         <div>
-
-          <div className="guests-land-container">
-            <div onClick={this.changeGuestsView}>Guests</div>
-          </div>
-
-          <div>
-            <Guests getUpdatedData={this.getUpdatedData}/>
-          </div>
-
+          {this.renderGuestsBasics()}
+          {this.renderGuestsPortal()}
         </div>
+
       );
     }
+  }
+
+  renderGuestsPortal () {
+    return ReactDOM.createPortal(
+      <Guests getUpdatedData={this.getUpdatedData} changeGuestsView={this.changeGuestsView}/>,
+      document.getElementById('guests')
+      // <div>
+      //     <div className="guests-land-container">
+      //       <div onClick={this.changeGuestsView}>Guests</div>
+      //     </div>
+      //     <div>
+      //       <Guests getUpdatedData={this.getUpdatedData}/>
+      //     </div>
+      // </div>
+    )
   }
 
   // testClick () {
