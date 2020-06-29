@@ -130,10 +130,6 @@ class AllDeals extends React.Component {
 
       </AllDealsWrapper>
 
-    // <div className="allDeals-container">
-    // <div className="allDeals-grid">{this.renderFour(this.props.currentHotel)}</div>
-    // <button type="button" onClick={this.onClickHandler}>View All</button>
-    // </div>
     );
   }
 
@@ -148,7 +144,6 @@ class AllDeals extends React.Component {
           {this.renderAllDealsBasics()}
           {this.renderAll()}
         </div>
-
       );
     }
   }

@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
-
-
 export const AppWrapper = styled.div`
   background-color: lightblue;
   width: 395px;
   height: 487px;
-
   padding: 4px 16px 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
   min-height: 430px;
@@ -22,9 +19,6 @@ export const AppWrapper = styled.div`
 `;
 
 export const CalendarGuestsWrapper = styled.div`
-  // display: block;
-  // height: auto;
-  // padding: 0;
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -32,43 +26,28 @@ export const CalendarGuestsWrapper = styled.div`
 `;
 
 export const DatePickerWrapper = styled.div`
-  // height: 100%;
-  // vertical-align: top;
-  // white-space: normal;
-  // text-align: left;
-  // display: -webkit-flex;
-  // display: -ms-flexbox;
-  // display: flex;
-  // -webkit-user-select: none;
-  // -moz-user-select: none;
-  // -ms-user-select: none;
-  // user-select: none;
-  // color: #000a12;
-
-
   display: block;
   flex-direction: row;
 
 `;
 
 export const DatePickerButton = styled.button`
-flex: 1 1 0%;
-display: inline-block;
-height: 100%;
-margin: 0 0 0 8px;
-cursor: pointer;
-outline: none;
-box-sizing: border-box;
-text-decoration: none;
-background: #fff;
-padding: 0;
-text-align: left;
-font-size: inherit;
-border: 1px solid #d6d6d6;
-border-radius: 3px;
-box-shadow: 0 1px 2px rgba(0,0,0,.1);
-
-width: 172.5px;
+  flex: 1 1 0%;
+  display: inline-block;
+  height: 100%;
+  margin: 0 0 0 8px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: #fff;
+  padding: 0;
+  text-align: left;
+  font-size: inherit;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  width: 172.5px;
 `;
 
 export const DatePickerButtonDiv = styled.div`
@@ -83,13 +62,13 @@ export const DatePickerButtonDiv = styled.div`
   }}
   }
 
-height: 100%;
-background: #fff;
-border: none;
-border-radius: 2px;
-box-sizing: border-box;
-white-space: nowrap;
-position: relative;
+  height: 100%;
+  background: #fff;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  position: relative;
 `;
 
 export const DatePickerButtonDivIconSpan = styled.span`
@@ -156,77 +135,75 @@ export const GuestsWrapper = styled.div`
   -ms-user-select: none;
   user-select: none;
   color: #000a12;
-
   margin-top: 10px;
 `;
 
 export const GuestsButton = styled.button`
--webkit-flex: 1 1 0%;
--ms-flex: 1 1 0%;
-flex: 1 1 0%;
-display: inline-block;
-height: 100%;
-margin: 0 0 0 8px;
-cursor: pointer;
-outline: none;
-box-sizing: border-box;
-text-decoration: none;
-background: #fff;
-padding: 0;
-text-align: left;
-font-size: inherit;
-border: 1px solid #d6d6d6;
-border-radius: 3px;
-box-shadow: 0 1px 2px rgba(0,0,0,.1);
-
+  -webkit-flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+  display: inline-block;
+  height: 100%;
+  margin: 0 0 0 8px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: #fff;
+  padding: 0;
+  text-align: left;
+  font-size: inherit;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
 `;
 
 export const GuestsButtonDiv = styled.div`
-height: 100%;
-background: #fff;
-border: none;
-border-radius: 2px;
-box-sizing: border-box;
-white-space: nowrap;
-position: relative;
+  height: 100%;
+  background: #fff;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  position: relative;
 `;
 
 export const GuestsButtonIconSpan = styled.span`
-display: none;
-margin: 0 0 0 4px;
-font-size: 1.25em;
-color: #767676;
-vertical-align: middle;
+  display: none;
+  margin: 0 0 0 4px;
+  font-size: 1.25em;
+  color: #767676;
+  vertical-align: middle;
 `;
 
 export const GuestsButtonPickerSpan = styled.span`
-display: inline-block;
-    vertical-align: middle;
-    margin-top: 3px;
-    padding: 0 6px;
-    overflow: hidden;
-    box-sizing: border-box;
-    max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 3px;
+  padding: 0 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
 `;
 
 export const GuestsButtonPickerSpanGuestsSpan = styled.span`
-display: block;
-    margin-bottom: 2px;
-    font-size: .75em;
-    line-height: normal;
-    color: #4a4a4a;
+  display: block;
+  margin-bottom: 2px;
+  font-size: .75em;
+  line-height: normal;
+  color: #4a4a4a;
 `;
 
 export const GuestsButtonPickerSpanGuestsConfigSpan = styled.span`
-font-size: .8125em;
-    font-weight: 700;
-    line-height: 20px;
+  font-size: .8125em;
+  font-weight: 700;
+  line-height: 20px;
 `;
 
 export const GuestsButtonPickerSpanGuestsConfigInnerSpan = styled.span`
-    font-size: 1em;
-    font-weight: 700;
-    line-height: 20px;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 20px;
 `;
 
 export const HeaderWrapper = styled.div`
