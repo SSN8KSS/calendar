@@ -103,9 +103,12 @@ export const DatePickerButtonDivIconSpan = styled.span`
     speak: none;
     text-decoration: none;
 }
+
 font-size: 1.25em;
 color: #767676;
 vertical-align: middle;
+padding-left: 10px;
+padding-right: 5px;
 `;
 
 export const DatePickerButtonDivFieldSpan = styled.span`
@@ -271,3 +274,4 @@ export const MainWrapper = styled.div`
   height: 507px;
   font-family: 'Trip Sans', Arial, sans-serif;
 `;
+

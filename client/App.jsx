@@ -21,6 +21,10 @@ import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan,
 
 } from './AppStyles.js';
 
+
+import { faCalendarAlt} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class App extends React.Component {
   constructor (props) {
     super(props);
@@ -130,13 +134,17 @@ class App extends React.Component {
 
           <DatePickerButton onClick={this.changeCalendarView}>
             <DatePickerButtonDiv color="green">
-              <DatePickerButtonDivIconSpan>i</DatePickerButtonDivIconSpan>
+
+              <DatePickerButtonDivIconSpan>
+                <FontAwesomeIcon icon={faCalendarAlt}/>
+              </DatePickerButtonDivIconSpan>
+
               <DatePickerButtonDivFieldSpan>
                 <DatePickerButtonDivFieldSpanCheckIn>
                   Check In
                 </DatePickerButtonDivFieldSpanCheckIn>
                 <DatePickerButtonDivFieldSpanDate>
-                  <span>- / - / -</span>
+                  <span>{moment().format('ddd')}, {moment().format('MM/DD/YYYY')}</span>
                 </DatePickerButtonDivFieldSpanDate>
               </DatePickerButtonDivFieldSpan>
             </DatePickerButtonDiv>
@@ -145,13 +153,15 @@ class App extends React.Component {
 
           <DatePickerButton onClick={this.changeCalendarView}>
             <DatePickerButtonDiv color="red">
-              <DatePickerButtonDivIconSpan>i</DatePickerButtonDivIconSpan>
+            <DatePickerButtonDivIconSpan>
+                <FontAwesomeIcon icon={faCalendarAlt}/>
+              </DatePickerButtonDivIconSpan>
               <DatePickerButtonDivFieldSpan>
                 <DatePickerButtonDivFieldSpanCheckIn>
                   Check Out
                 </DatePickerButtonDivFieldSpanCheckIn>
                 <DatePickerButtonDivFieldSpanDate>
-                  <span>- / - / -</span>
+                <span>{moment().add(1,'day').format('ddd')}, {moment().add(1,'day').format('MM/DD/YYYY')}</span>
                 </DatePickerButtonDivFieldSpanDate>
               </DatePickerButtonDivFieldSpan>
             </DatePickerButtonDiv>
