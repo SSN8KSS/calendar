@@ -175,6 +175,12 @@ export const CalendarAverageSection = styled.div`
   border: solid #e0e0e0;
   border-width: 1px 0 0;
   color: #4a4a4a;
+
+  margin-right: 15px;
+  margin-left: 15px;
+  position:absolute;
+  bottom:0;
+  width: 90%;
 `;
 
 export const CalendarAverageSectionSpan = styled.span`
