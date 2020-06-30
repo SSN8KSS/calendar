@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import {CalendarPortalWrapper, CalendarHeader, CalendarLegendDiv, CalendarLegendSpan, CheckInContainer, CheckInWrapper, CalendarMonths, CalendarNavBar, CalendarNavBarButton, CalendarNavBarButtonIcon, CalendarGrid, CalendarCaption, CalendarWeekdays, CalendarBody, WeekDaysRow, WeekDay, CalendarRow, CalendarCell, CalendarAverageSection, CalendarAverageSectionSpan
+import {CalendarPortalWrapper, CalendarHeader, CalendarLegendDiv, CalendarLegendSpan, CheckInContainer, CheckInWrapper, CalendarMonths, CalendarNavBar, CalendarNavBarButton, CalendarNavBarButtonIcon, CalendarGrid, CalendarCaption, CalendarWeekdays, CalendarBody, WeekDaysRow, WeekDay, CalendarRow, CalendarCell, CalendarAverageSection, CalendarAverageSectionSpan, CalendarMonthsDiv
 
 } from './CalendarStyles.js';
 
@@ -203,6 +203,7 @@ class Calendar extends React.Component {
 
 
             <CalendarMonths>
+              <CalendarMonthsDiv>
               <CalendarGrid>
                 <CalendarCaption>
                   <div>{moment(this.state.currentMonth).format('MMMM yyyy')}</div>
@@ -232,6 +233,7 @@ class Calendar extends React.Component {
                   {this.renderCells(this.state.nextMonth)}
                 </CalendarBody>
               </CalendarGrid>
+              </CalendarMonthsDiv>
             </CalendarMonths>
           </CheckInWrapper>
         </CheckInContainer>
