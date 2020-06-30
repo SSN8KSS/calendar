@@ -133,50 +133,50 @@ class App extends React.Component {
   renderCalendarBasics () {
     return (
       <div>
-          <DatePickerButton onClick={this.changeCalendarView}>
-            <DatePickerButtonDiv color="green">
+        <DatePickerButton onClick={this.changeCalendarView}>
+          <DatePickerButtonDiv color="green">
 
-              <DatePickerButtonDivIconSpan>
-                <FontAwesomeIcon icon={faCalendarAlt}/>
-              </DatePickerButtonDivIconSpan>
+            <DatePickerButtonDivIconSpan>
+              <FontAwesomeIcon icon={faCalendarAlt}/>
+            </DatePickerButtonDivIconSpan>
 
-              <DatePickerButtonDivFieldSpan>
-                <DatePickerButtonDivFieldSpanCheckIn>
+            <DatePickerButtonDivFieldSpan>
+              <DatePickerButtonDivFieldSpanCheckIn>
                   Check In
-                </DatePickerButtonDivFieldSpanCheckIn>
-                <DatePickerButtonDivFieldSpanDate>
-                  <span>{moment().format('ddd')}, {moment().format('MM/DD/YYYY')}</span>
-                </DatePickerButtonDivFieldSpanDate>
-              </DatePickerButtonDivFieldSpan>
-            </DatePickerButtonDiv>
-          </DatePickerButton>
+              </DatePickerButtonDivFieldSpanCheckIn>
+              <DatePickerButtonDivFieldSpanDate>
+                <span>{moment().format('ddd')}, {moment().format('MM/DD/YYYY')}</span>
+              </DatePickerButtonDivFieldSpanDate>
+            </DatePickerButtonDivFieldSpan>
+          </DatePickerButtonDiv>
+        </DatePickerButton>
 
 
-          <DatePickerButton onClick={this.changeCalendarView}>
-            <DatePickerButtonDiv color="red">
-              <DatePickerButtonDivIconSpan>
-                <FontAwesomeIcon icon={faCalendarAlt}/>
-              </DatePickerButtonDivIconSpan>
-              <DatePickerButtonDivFieldSpan>
-                <DatePickerButtonDivFieldSpanCheckIn>
+        <DatePickerButton onClick={this.changeCalendarView}>
+          <DatePickerButtonDiv color="red">
+            <DatePickerButtonDivIconSpan>
+              <FontAwesomeIcon icon={faCalendarAlt}/>
+            </DatePickerButtonDivIconSpan>
+            <DatePickerButtonDivFieldSpan>
+              <DatePickerButtonDivFieldSpanCheckIn>
                   Check Out
-                </DatePickerButtonDivFieldSpanCheckIn>
-                <DatePickerButtonDivFieldSpanDate>
-                  <span>{moment().add(1, 'day').format('ddd')}, {moment().add(1, 'day').format('MM/DD/YYYY')}</span>
-                </DatePickerButtonDivFieldSpanDate>
-              </DatePickerButtonDivFieldSpan>
-            </DatePickerButtonDiv>
-          </DatePickerButton>
-        </div>
-    )
+              </DatePickerButtonDivFieldSpanCheckIn>
+              <DatePickerButtonDivFieldSpanDate>
+                <span>{moment().add(1, 'day').format('ddd')}, {moment().add(1, 'day').format('MM/DD/YYYY')}</span>
+              </DatePickerButtonDivFieldSpanDate>
+            </DatePickerButtonDivFieldSpan>
+          </DatePickerButtonDiv>
+        </DatePickerButton>
+      </div>
+    );
   }
 
   renderCalendarPortal () {
     return ReactDOM.createPortal(
-        <Calendar getUpdatedData={this.getUpdatedData} calculateAvrgRate={this.calculateAvrgRate}/>
-      ,document.getElementById('calendar'));
+      <Calendar getUpdatedData={this.getUpdatedData} calculateAvrgRate={this.calculateAvrgRate}/>
+      , document.getElementById('calendar'));
 
-          {/* <div className="cal-land-container">
+    { /* <div className="cal-land-container">
             <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
             <div></div>
             <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div>
@@ -186,7 +186,7 @@ class App extends React.Component {
             <Calendar
               getUpdatedData={this.getUpdatedData}
               calculateAvrgRate={this.calculateAvrgRate}/>
-          </div> */}
+          </div> */ }
     // )
   }
 

@@ -62,7 +62,7 @@ class Calendar extends React.Component {
     for (var i = 0; i < 7; i++) {
       days.push(
         <WeekDay key={i}>{moment(startDate).add(i, 'days').format(dateFormat).toUpperCase()}</WeekDay>
-        );
+      );
     }
     return days;
 
@@ -93,10 +93,9 @@ class Calendar extends React.Component {
         formattedDate = moment(day).format(dateFormat);
         const dayCopy = day;
         days.push(
-          <CalendarCell key={day} onClick={ ()=>{ this.onDateClick(dayCopy)} }>
+          <CalendarCell key={day} onClick={ ()=>{ this.onDateClick(dayCopy); } }>
             <span>{formattedDate}</span>
           </CalendarCell>
-
           // <div
           //   className={`cell${
           //     moment(day).isSame(moment(), 'day') ? '-today' :
@@ -115,16 +114,10 @@ class Calendar extends React.Component {
         <CalendarRow key={day}>
           {days}
         </CalendarRow>
-        // <div
-        //   className="row"
-        //   key={day}>
-        //   {days}
-        // </div>
       );
       days = [];
     }
     return rows;
-    // <div className="body">{rows}</div>;
   }
 
   onDateClick (day) {
@@ -180,8 +173,6 @@ class Calendar extends React.Component {
           </CalendarLegendDiv>
         </CalendarHeader>
 
-
-
         <CheckInContainer>
           <CheckInWrapper>
             <CalendarNavBar>
@@ -199,40 +190,37 @@ class Calendar extends React.Component {
               </CalendarNavBarButton>
             </CalendarNavBar>
 
-
-
-
             <CalendarMonths>
               <CalendarMonthsDiv>
-              <CalendarGrid>
-                <CalendarCaption>
-                  <div>{moment(this.state.currentMonth).format('MMMM yyyy')}</div>
-                </CalendarCaption>
-                <CalendarWeekdays>
-                  <WeekDaysRow>
-                  {this.renderWeekDays(this.state.currentMonth)}
-                  </WeekDaysRow>
-                </CalendarWeekdays>
+                <CalendarGrid>
+                  <CalendarCaption>
+                    <div>{moment(this.state.currentMonth).format('MMMM yyyy')}</div>
+                  </CalendarCaption>
+                  <CalendarWeekdays>
+                    <WeekDaysRow>
+                      {this.renderWeekDays(this.state.currentMonth)}
+                    </WeekDaysRow>
+                  </CalendarWeekdays>
 
-                <CalendarBody>
-                  {this.renderCells(this.state.currentMonth)}
-                </CalendarBody>
-              </CalendarGrid>
+                  <CalendarBody>
+                    {this.renderCells(this.state.currentMonth)}
+                  </CalendarBody>
+                </CalendarGrid>
 
 
-              <CalendarGrid>
-                <CalendarCaption>
-                  <div>{moment(this.state.nextMonth).format('MMMM yyyy')}</div>
-                </CalendarCaption>
-                <CalendarWeekdays>
-                  <WeekDaysRow>
-                  {this.renderWeekDays(this.state.nextMonth)}
-                  </WeekDaysRow>
-                </CalendarWeekdays>
-                <CalendarBody>
-                  {this.renderCells(this.state.nextMonth)}
-                </CalendarBody>
-              </CalendarGrid>
+                <CalendarGrid>
+                  <CalendarCaption>
+                    <div>{moment(this.state.nextMonth).format('MMMM yyyy')}</div>
+                  </CalendarCaption>
+                  <CalendarWeekdays>
+                    <WeekDaysRow>
+                      {this.renderWeekDays(this.state.nextMonth)}
+                    </WeekDaysRow>
+                  </CalendarWeekdays>
+                  <CalendarBody>
+                    {this.renderCells(this.state.nextMonth)}
+                  </CalendarBody>
+                </CalendarGrid>
               </CalendarMonthsDiv>
             </CalendarMonths>
           </CheckInWrapper>
@@ -245,25 +233,6 @@ class Calendar extends React.Component {
         </CalendarAverageSection>
 
       </CalendarPortalWrapper>
-
-      // <div className="main-container">
-      //   <div className="main-container-header"><span className="main-cont-header-span">Select a date to continue</span></div>
-      //   <div className="navbar">{this.renderNavbar()}</div>
-
-      //   <div className="calendar-layout-container">
-      //     <div className="calendar-body">
-      //       <div className="calendar-weekday">{this.renderWeekDays(this.state.currentMonth)}</div>
-      //       <div className="calendar-cells">{this.renderCells(this.state.currentMonth)}</div>
-      //     </div>
-      //     <div className="calendar-body">
-      //       <div className="calendar-weekday">{this.renderWeekDays(this.state.nextMonth)}</div>
-      //       <div className="calendar-cells">{this.renderCells(this.state.nextMonth)}</div>
-      //     </div>
-      //   </div>
-
-      //   <div className="main-container-bottom"><span className="main-cont-header-span">Average daily rates: {this.props.calculateAvrgRate()}</span></div>
-
-      // </div>
     );
   }
 }
