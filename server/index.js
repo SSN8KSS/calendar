@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 3001;
 const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');

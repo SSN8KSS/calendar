@@ -18,6 +18,27 @@ export const AppWrapper = styled.div`
   font-family: 'Poppins', sans-serif;
 `;
 
+export const CalendarPortalWrapper = styled.div`
+  background-color: lightblue;
+  width: 597px;
+  height: 420px;
+  padding: 4px 16px 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  min-height: 430px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  position: relative;
+  z-index: 25;
+  font-family: 'Poppins', sans-serif;
+  top: 5px;
+  left:150px;
+  position:absolute;
+`;
+
 export const CalendarGuestsWrapper = styled.div`
   display: flex;
   flex-direction: column;
