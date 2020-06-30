@@ -19,7 +19,8 @@ import {MainWrapper, AppWrapper, HeaderWrapper, HeaderTextBlock, HeaderIconSpan,
   //deals
   // AllDealsWrapper,
   BestDealsWrapper, DealsWrapper,
-  // PortalTest
+
+
 
 } from './AppStyles.js';
 
@@ -45,11 +46,10 @@ class App extends React.Component {
     this.changeCalendarView = this.changeCalendarView.bind(this);
     this.renderGuests = this.renderGuests.bind(this);
     this.changeGuestsView = this.changeGuestsView.bind(this);
-
   }
 
   componentDidMount () {
-    this.getData('92');
+    this.getData('94');
   }
 
   getData (term) {
@@ -130,11 +130,9 @@ class App extends React.Component {
     });
   }
 
-  renderCalendar () {
-    if (!this.state.calendarView) {
-      return (
-        <div>
-
+  renderCalendarBasics () {
+    return (
+      <div>
           <DatePickerButton onClick={this.changeCalendarView}>
             <DatePickerButtonDiv color="green">
 
@@ -169,15 +167,16 @@ class App extends React.Component {
               </DatePickerButtonDivFieldSpan>
             </DatePickerButtonDiv>
           </DatePickerButton>
-
         </div>
-      );
-    }
-    if (this.state.calendarView) {
-      return (
-        <div>
+    )
+  }
 
-          <div className="cal-land-container">
+  renderCalendarPortal () {
+    return ReactDOM.createPortal(
+        <Calendar getUpdatedData={this.getUpdatedData} calculateAvrgRate={this.calculateAvrgRate}/>
+      ,document.getElementById('calendar'));
+
+          {/* <div className="cal-land-container">
             <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
             <div></div>
             <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div>
@@ -187,8 +186,19 @@ class App extends React.Component {
             <Calendar
               getUpdatedData={this.getUpdatedData}
               calculateAvrgRate={this.calculateAvrgRate}/>
-          </div>
+          </div> */}
+    // )
+  }
 
+  renderCalendar () {
+    if (!this.state.calendarView) {
+      return this.renderCalendarBasics();
+    }
+    if (this.state.calendarView) {
+      return (
+        <div>
+          {this.renderCalendarBasics()}
+          {this.renderCalendarPortal()}
         </div>
       );
 
