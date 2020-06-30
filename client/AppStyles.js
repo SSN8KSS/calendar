@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const AppWrapper = styled.div`
   background-color: lightblue;
   width: 395px;
-  height: 487px;
+  height: auto;
   padding: 4px 16px 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
   min-height: 430px;

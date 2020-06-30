@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import getBestOrRestDeals from '../lib/getBestOrRestDeals.js';
 import styled from 'styled-components';
 import {AllDealsWrapper, AllDealsMainDiv, AllDealsBottomDiv, AllDealsEntityOuter, AllDealsEntityInner, AllDealsEntityServiceSpan, AllDealsEntityPriceSpan, AllDealsEntityServiceNameSpan, AllDealsEntityServiceIconSpan, ViewAllWrapper, ViewAllDiv, ViewAllPortalWrapper, ViewAllPortal, ViewAllPortalLine, ViewPortalLineDiv, ViewPortalLineNameSpan, ViewPortalLinePriceSpan, ViewAllPortalLineIconSpan, ViewAllPortalLineInnerDiv} from './AllDealsStyles.js';
-
+import AllDealsStyles from './AllDealsStyles.js';
 import { faCaretDown, faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
