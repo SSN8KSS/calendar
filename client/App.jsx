@@ -269,20 +269,6 @@ class App extends React.Component {
     );
   }
 
-  // testClick () {
-  //   this.setState({
-  //     testClick: !this.state.testClick
-  //   })
-  // }
-
-  // testPortal () {
-  //   if(!this.state.testClick) {
-  //     return (<Modal></Modal>)
-  //   } else {
-  //     return <div>Nothing</div>
-  //   }
-  // }
-
   render () {
 
     return (
@@ -319,26 +305,11 @@ class App extends React.Component {
             <AllDeals currentHotel={this.state.currentHotel}/>
           </DealsWrapper>
 
-          {/* <button onClick={this.testClick}>CLICK</button>
-          {this.testPortal()} */}
-
         </AppWrapper>
 
       </MainWrapper>
     );
   }
 }
-
-// const domPortal = document.getElementById('modal-root');
-
-// const Modal = () => {
-
-//   return ReactDOM.createPortal(
-
-//     <PortalTest>Portal Works</PortalTest>
-
-//     , domPortal
-//   );
-// }
 
 export default App;

@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const parser = require('body-parser');
 const db = require('../database/index.js');
 const moment = require('moment');
+const cors = require(‘cors’);
+app.use(cors());
 
 app.listen(port, () => console.log(`App listening on http://localhost:${port}`));
 
