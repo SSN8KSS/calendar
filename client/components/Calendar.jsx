@@ -93,20 +93,21 @@ class Calendar extends React.Component {
         formattedDate = moment(day).format(dateFormat);
         const dayCopy = day;
         days.push(
-          <CalendarCell key={day} onClick={ ()=>{ this.onDateClick(dayCopy); } }>
-            <span>{formattedDate}</span>
-          </CalendarCell>
-          // <div
-          //   className={`cell${
-          //     moment(day).isSame(moment(), 'day') ? '-today' :
-          //       !moment(day).isSame(monthStart, 'month') ? '-disabled' :
-          //         moment(day).isBefore(today) ? '-inactive' : ''
-          //     // moment(day).isSame(selectedDate, 'day') ? '-selected' : ''
-          //   }`}
-          //   key={day}
-          //   onClick={ ()=>{ this.onDateClick(dayCopy); }}
-          // ><span className="number">{formattedDate}</span>
-          // </div>
+          <div
+            className={`cell${
+              moment(day).isSame(moment(), 'day') ? '-today' :
+                !moment(day).isSame(monthStart, 'month') ? '-disabled' :
+                  moment(day).isBefore(today) ? '-inactive' :
+                    moment(day).isSame(this.state.checkIn, 'day') ? '-checkIn' :
+                      moment(day).isSame(this.state.checkOut, 'day') ? '-checkOut' : ''
+            }`}
+            key={day}
+            onClick={ ()=>{ this.onDateClick(dayCopy); }}
+          ><span className="number">{formattedDate}</span>
+          </div>
+          // <CalendarCell key={day} onClick={ ()=>{ this.onDateClick(dayCopy); } }>
+          //   <span>{formattedDate}</span>
+          // </CalendarCell>
         );
         day = moment(day).add(1, 'day');
       }

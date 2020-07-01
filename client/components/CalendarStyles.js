@@ -152,7 +152,127 @@ export const WeekDay = styled.div`
 
 export const CalendarRow = styled.div`
   display: flex;
-`;
+  .cell {
+    border: 1px solid grey;
+    background-color: #fff;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cell:hover {
+    background: #00aa6c;
+    color: #fff;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cell-today {
+    border: 1px solid grey;
+    background-color: #fff;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 600;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cell-today:hover {
+    background: #00aa6c;
+    color: #fff;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cell-disabled {
+    background-color: white;
+    color: white;
+    pointer-events: none;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cell-checkIn {
+    border: 1px solid grey;
+    background-color: #00aa6c;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .cell-checkOut {
+    border: 1px solid grey;
+    background-color: #cc0202;
+    flex: 1 0;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,0,0,0);
+    margin: -2px 0 0 -2px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  `;
 
 export const CalendarCell = styled.div`
   flex: 1 0;
@@ -167,6 +287,7 @@ export const CalendarCell = styled.div`
   margin: -2px 0 0 -2px;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
+
 `;
 
 export const CalendarAverageSection = styled.div`
