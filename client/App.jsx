@@ -96,9 +96,18 @@ class App extends React.Component {
       if (hotel[0]['err_msg']) {
         console.log(hotel[0]['err_msg']);
       } else {
-        this.setState({
-          currentHotel: hotel
-        });
+        if (this.state.calendarView) {
+          this.setState({
+            currentHotel: hotel,
+            calendarView: false,
+            guestsView: !this.state.guestsView
+          });
+        } else {
+          this.setState({
+            currentHotel: hotel,
+            guestsView: false
+          });
+        }
       }
     });
   }
