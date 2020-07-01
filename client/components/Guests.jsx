@@ -3,7 +3,6 @@ import Children from './Children.jsx';
 import styled from 'styled-components';
 import {GuestsWrapper, GuestsInnerLine, GuestsInnerLineConfig, GuestsInnerLineConfigButton, GuestsInnerLineConfigField, GuestsInnerLineConfigButtonSpan, GuestsInnerLineLabel, GuestsInnerLineLabelIcon, CloseButton, UpdateButtonDiv, UpdateButton} from './GuestsStyles.js';
 
-
 import { faMinus, faPlus, faBed} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
