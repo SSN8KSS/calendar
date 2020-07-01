@@ -9,7 +9,7 @@ const randomPrice = (min, max) => {
 
 const randomIsBooked = () => {
   const temp = Math.random();
-  return temp >= 0.5 ? true : false;
+  return temp >= 0.7 ? true : false;
 };
 
 const generateSampleData = (numberOfDataToGenerate) => {
