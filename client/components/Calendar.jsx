@@ -97,9 +97,9 @@ class Calendar extends React.Component {
             className={`cell${
               moment(day).isSame(moment(), 'day') ? '-today' :
                 !moment(day).isSame(monthStart, 'month') ? '-disabled' :
-                  moment(day).isBefore(today) ? '-inactive' :
-                    moment(day).isSame(this.state.checkIn, 'day') ? '-checkIn' :
-                      moment(day).isSame(this.state.checkOut, 'day') ? '-checkOut' : ''
+                  moment(day).isBefore(today) ? '-inactive' : ''
+                    // moment(day).isSame(this.state.checkIn, 'day') ? '-checkIn' :
+                    //   moment(day).isSame(this.state.checkOut, 'day') ? '-checkOut' : ''
             }`}
             key={day}
             onClick={ ()=>{ this.onDateClick(dayCopy); }}
