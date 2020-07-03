@@ -1,13 +1,27 @@
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/hotellist', {useNewUrlParser: true, useUnifiedTopology: true});
+const option = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+};
+
+mongoose.connect('mongodb://database/hotellist', option)
+  .then((result)=>{
+    console.log('DB CONNECT');
+  })
+  .catch((err)=>{
+    console.log('UNABLE TO CONNECT');
+  });
 
 const db = mongoose.connection;
 
 //Test connection
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  console.log('DB connected');
+  console.log('DATABASE CONNECTED!');
 });
 //
 
@@ -23,7 +37,8 @@ const hotelSchema = new mongoose.Schema({
   prices: [ {serviceName: String, price: Number} ]
 });
 
-const HotelClass = mongoose.model('Hotels', hotelSchema);
+const HotelClass = mongoose.model('hotels', hotelSchema);
 
 module.exports.model = HotelClass;
 module.exports.connection = db;
+

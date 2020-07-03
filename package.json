@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "calendar component of hotel Item Detail Page",
   "author": "Andrey Petunin",
-  "license": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hotellooo/calendar"
+  },
   "engines": {
     "node": ">=6.13.0"
   },

@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const getDataFromServer = async (term) => {
-  const response = await axios.get(`http://localhost:3001/api/calendar/db/${term}`);
+  console.log('REQUEST FROM APP RECIEVED');
+  const response = await axios.get(`/api/calendar/db/${term}`);
   return response.data;
 };
 

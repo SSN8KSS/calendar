@@ -172,19 +172,6 @@ class App extends React.Component {
     return ReactDOM.createPortal(
       <Calendar getUpdatedData={this.getUpdatedData} calculateAvrgRate={this.calculateAvrgRate}/>
       , document.getElementById('calendar'));
-
-    { /* <div className="cal-land-container">
-            <div className="check-field" onClick={this.changeCalendarView}>CheckInField</div>
-            <div></div>
-            <div className="check-field" onClick={this.changeCalendarView}>CheckOutField</div>
-          </div>
-
-          <div>
-            <Calendar
-              getUpdatedData={this.getUpdatedData}
-              calculateAvrgRate={this.calculateAvrgRate}/>
-          </div> */ }
-    // )
   }
 
   renderCalendar () {
@@ -198,7 +185,6 @@ class App extends React.Component {
           {this.renderCalendarPortal()}
         </div>
       );
-
     }
   }
 
@@ -255,14 +241,6 @@ class App extends React.Component {
     return ReactDOM.createPortal(
       <Guests getUpdatedData={this.getUpdatedData} changeGuestsView={this.changeGuestsView}/>,
       document.getElementById('guests')
-      // <div>
-      //     <div className="guests-land-container">
-      //       <div onClick={this.changeGuestsView}>Guests</div>
-      //     </div>
-      //     <div>
-      //       <Guests getUpdatedData={this.getUpdatedData}/>
-      //     </div>
-      // </div>
     );
   }
 

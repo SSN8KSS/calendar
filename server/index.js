@@ -16,14 +16,18 @@ app.use(parser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.get('/api/calendar/db/:hotelIdOrName', (req, res) => {
+  console.log('REQUEST FROM HELP FUNC RECIEVED!');
+  console.log(req.params);
   let q = req.params.hotelIdOrName;
   let parsed = parseInt(q);
   if (parsed) {
     search = {'id': q};
+    console.log(search);
   } else {
     search = {'hotelName': {'$regex': q.slice(0, 1).toUpperCase() + q.slice(1)}};
   }
   db.model.find(search, (err, data) => {
+    console.log('QUERY SENT');
     if (err) {
       console.log('DB QUERY ERROR', err);
       res.status(400).send();
