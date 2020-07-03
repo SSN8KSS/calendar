@@ -7,8 +7,8 @@ const option = {
   useFindAndModify: false,
   useCreateIndex: true,
 };
-
-mongoose.connect('mongodb://database/hotellist', option)
+//database
+mongoose.connect('mongodb://172.17.0.2/hotellist', option)
   .then((result)=>{
     console.log('DB CONNECT');
   })
