@@ -37,12 +37,13 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getData('94');
+    this.getData('63');
   }
 
   getData (term) {
     const response = getDataFromServer(term);
     response.then((hotel) => {
+      console.log(hotel);
       this.setState({
         currentHotel: hotel
       });

@@ -9,7 +9,7 @@ const option = {
 };
 //database
 // 172.17.0.2
-mongoose.connect('mongodb://database/hotellist', option)
+mongoose.connect('mongodb://localhost/hotellist', option)
   .then((result)=>{
     console.log('DB CONNECT');
   })
