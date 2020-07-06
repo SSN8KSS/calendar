@@ -54,7 +54,6 @@ export const BestDealsEntityLogoDiv = styled.div`
 `;
 
 export const BestDealsEntityLogoPicture = styled.img`
-  // fix sizes
   width: 103px;
   height: 44px;
 `;

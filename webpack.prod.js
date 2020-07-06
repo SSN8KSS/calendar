@@ -3,6 +3,7 @@ const SRC_DIR = path.join(__dirname, '/client');
 const DIST_DIR = path.join(__dirname, '/public');
 
 module.exports = {
+  mode: 'production',
   entry: `${SRC_DIR}/index.jsx`,
   module: {
     rules: [

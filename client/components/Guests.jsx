@@ -110,9 +110,6 @@ class Guests extends React.Component {
           <UpdateButton onClick={this.handleUpdateClick}>Update</UpdateButton>
         </UpdateButtonDiv>
       </GuestsWrapper>
-
-
-
     );
   }
 }

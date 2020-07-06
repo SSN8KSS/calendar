@@ -105,9 +105,6 @@ class Calendar extends React.Component {
             onClick={ ()=>{ this.onDateClick(dayCopy); }}
           ><span className="number">{formattedDate}</span>
           </div>
-          // <CalendarCell key={day} onClick={ ()=>{ this.onDateClick(dayCopy); } }>
-          //   <span>{formattedDate}</span>
-          // </CalendarCell>
         );
         day = moment(day).add(1, 'day');
       }

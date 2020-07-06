@@ -8,7 +8,13 @@ RUN mkdir -p /src/app
 WORKDIR /src/app
 
 # What source code do you want to copy, and where to put it?
-COPY . /src/app
+COPY package.json /src/app
+COPY node_modules /src/app/node_modules
+COPY public /src/app/public
+COPY server /src/app/server
+COPY database /src/app/database
+
+# COPY . /src/app
 
 # Does your app have any dependencies that should be installed?
 RUN npm install

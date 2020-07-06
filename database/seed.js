@@ -14,7 +14,7 @@ const randomIsBooked = () => {
 
 const generateSampleData = (numberOfDataToGenerate) => {
   const sampleData = [];
-  const serviceList = ['Hotels.com', 'Expedia.com', 'Snaptravel', 'Booking.com', 'Travelocity', 'Orbitz.com', 'CheapTickets', 'Priceline', 'travelup.com', 'Tripadvisor'];
+  const serviceList = ['Hotels.com', 'Expedia.com', 'Snaptravel', 'Booking.com', 'Zenhotels', 'Orbitz.com', 'Prestigia', 'Priceline', 'eDreams', 'Tripadvisor'];
 
   for (var i = 1; i <= numberOfDataToGenerate; i++) {
     let obj = {'id': i};

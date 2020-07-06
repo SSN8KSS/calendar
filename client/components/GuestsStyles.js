@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const CloseButton = styled.button`
 &:before {
-  content: "x";
+    content: "x";
     font-size: 18px;
     line-height: 36px;
     color:#4a4a4a;
 }
-position: absolute;
+    position: absolute;
     top: 6px;
     right: 6px;
     text-align: center;
@@ -22,34 +22,34 @@ position: absolute;
 `;
 
 export const GuestsWrapper = styled.div`
-  background-color: lightblue;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-  box-sizing: border-box;
-  border-radius: 2px;
-  background-color: #fff;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e0e0e0;
-  font-family: 'Poppins', sans-serif;
-  padding: 32px 16px 16px;
-  font-size: 14px;
-  min-width: 288px;
-  min-heigth: 342px;
-  position: absolute;
-  z-index: 25;
-  top: 50px;
-  left:400px;
-  max-height: auto;
+    background-color: lightblue;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    padding: 32px 16px 16px;
+    font-size: 14px;
+    min-width: 288px;
+    min-heigth: 342px;
+    position: absolute;
+    z-index: 25;
+    top: 50px;
+    left:400px;
+    max-height: auto;
 `;
 
 export const GuestsInnerLine = styled.div`
-  display: block;
-  margin-top: 10px;
-  min-height:38px;
+    display: block;
+    margin-top: 10px;
+    min-height:38px;
 `;
 
 export const GuestsInnerLineConfig = styled.div`
-width: 130px;
+    width: 130px;
     float: right;
     display: flex;
     height: 36px;
@@ -61,7 +61,6 @@ width: 130px;
 `;
 
 export const GuestsInnerLineConfigButton = styled.button`
-//before
     background-color: #fff;
     cursor: default;
     min-width: 36px;
@@ -69,13 +68,13 @@ export const GuestsInnerLineConfigButton = styled.button`
 `;
 
 export const GuestsInnerLineConfigButtonSpan = styled.span`
-color: #767676;
-background-color: #fff;
-cursor: default;
+    color: #767676;
+    background-color: #fff;
+    cursor: default;
 `;
 
 export const GuestsInnerLineConfigField = styled.span`
-flex: 1 1 auto;
+    flex: 1 1 auto;
     display: inline-block;
     vertical-align: top;
     font-size: 1em;
@@ -88,31 +87,29 @@ export const GuestsInnerLineLabel = styled.div`
     font-weight: 700;
     padding-right: 16px;
     line-height: 36px;
-
 `;
 
 export const GuestsInnerLineLabelIcon = styled.div`
-display: inline-block;
-font-style: normal;
-font-weight: 400;
-font-variant: normal;
-font-size: 20px;
-line-height: 1;
--webkit-font-smoothing: antialiased;
-speak: none;
-color:#2C2C2C;
-padding: 0px 16px 0px 0px;
-
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    font-size: 20px;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    color:#2C2C2C;
+    padding: 0px 16px 0px 0px;
 `;
 
 export const UpdateButtonDiv = styled.div`
-display: block;
-margin-top: 16px;
-font-size: 14px
+    display: block;
+    margin-top: 16px;
+    font-size: 14px
 `;
 
 export const UpdateButton = styled.button`
-background-color: #000;
+    background-color: #000;
     border-color: #000;
     border-radius: 3px;
     width: 256px;
