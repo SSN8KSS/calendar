@@ -80,7 +80,6 @@ class App extends React.Component {
     }
     const response = getUpdatedDataFromServer(query);
     response.then((hotel) => {
-      console.log('RESPONCE', hotel);
       if (hotel[0]['err_msg']) {
         console.log(hotel[0]['err_msg']);
       } else {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {ChildrenWrapper, ChildrenInnerLine, ChildrenInnerLineDiv, ChildrenInnerLineSpan, ChildrenInnerLineDropDown, ChildrenInnerLineDropDownField, ChildrenInnerLineDropDownIcon} from './ChildrenStyles.js';
 
-
 import { faCaretDown} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -21,7 +20,6 @@ const Children = ({childrenNumber}) => {
           </ChildrenInnerLineDropDown>
         </ChildrenInnerLineDiv>
       </ChildrenInnerLine>
-
     );
   }
 

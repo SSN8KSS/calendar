@@ -58,8 +58,6 @@ export const BestDealsEntityLogoPicture = styled.img`
   height: 44px;
 `;
 
-// 'https://static.tacdn.com/img2/branding/hotels/Hotelscom_384x164.png'
-
 export const BestDealsEntityPriceDiv = styled.div`
   color: black;
   width: 33.33333333%;

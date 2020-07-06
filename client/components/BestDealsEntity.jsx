@@ -68,6 +68,3 @@ const BestDealsEntity = ({item}) => {
 };
 
 export default BestDealsEntity;
-
-//tripadvisor
-// url(/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary.svg) no-repeat

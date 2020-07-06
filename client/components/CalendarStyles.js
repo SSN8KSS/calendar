@@ -61,8 +61,6 @@ export const CheckInWrapper = styled.div`
   user-select: none;
 `;
 
-
-//think!!!position and spacebetween
 export const CalendarNavBar = styled.div`
   display: flex;
   flex-direction: row;
@@ -303,7 +301,6 @@ export const CalendarCell = styled.div`
   margin: -2px 0 0 -2px;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-
 `;
 
 export const CalendarAverageSection = styled.div`
