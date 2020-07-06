@@ -18,11 +18,11 @@ const BestDealsEntity = ({item}) => {
       'Expedia.com': 'https://static.tacdn.com/img2/branding/hotels/expediaib_new_384164.png',
       'Snaptravel': 'https://static.tacdn.com/img2/branding/hotels/Snaptravel_384x164.png',
       'Orbitz.com': 'https://static.tacdn.com/img2/branding/hotels/orbitzews_384164.png',
-      'Travelocity': 'https://static.tacdn.com/img2/branding/hotels/Hotelscom_384x164.png',
-      'CheapTickets': 'https://static.tacdn.com/img2/branding/hotels/Hotelscom_384x164.png',
-      'Priceline': 'https://static.tacdn.com/img2/branding/hotels/Hotelscom_384x164.png',
-      'travelup.com': 'https://static.tacdn.com/img2/branding/hotels/Hotelscom_384x164.png',
-      'Tripadvisor': 'https://static.tacdn.com/img2/branding/hotels/Hotelscom_384x164.png'
+      'Tripadvisor': 'https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary.svg',
+      'Priceline': 'https://static.tacdn.com/img2/branding/hotels/pcln-logo-384x164.png',
+      'eDreams': 'https://static.tacdn.com/img2/branding/hotels/ed_16852.png',
+      'Zenhotels': 'https://static.tacdn.com/img2/branding/hotels/zenlogo.png',
+      'Prestigia': 'https://static.tacdn.com/img2/branding/hotels/logo-prestigia-size-384-164.png'
     };
     return (
       <BestDealsEntityLogoPicture src={links[item.serviceName]}></BestDealsEntityLogoPicture>
