@@ -34,7 +34,7 @@ const hotelSchema = new mongoose.Schema({
   },
   hotelName: String,
   roomsTotal: Number,
-  maxGuestPerRoom: Number,
+  maxAdultsPerRoom: Number,
   vacancy: [ {date: String, isBooked: Boolean} ],
   prices: [ {serviceName: String, price: Number} ]
 });
