@@ -45,19 +45,19 @@
         "checkInDate": "Date",
         "checkOutDate": "Date",
         "guests: "{
-          rooms: "Number",
-          adults: "Number",
-          children: {
+          rooms: Number,
+          adults: Number,
+          children: "{
             [
               {
-                "childId": "{
+                childId: {
                   type: Number,
                   unique: true
-                }",
-                "childAge": "Number"
+                },
+                childAge: Number d d
               }
-            ] // not sure how to handle counting number of children here - either query or add as separate field?
-          },
+            ]
+          }", // not sure how to handle counting number of children here - either query or add as separate field?
         }
       }
       "dateAvailability": {
@@ -148,7 +148,6 @@
       "hotels": [{
         // single hotel JSON object
       }
-      "
       "hotelClass": [
         "5Stars": "Number",
         "4Stars": "Number",
@@ -194,9 +193,9 @@
         }",
         "checkInDate": "Date",
         "checkOutDate": "Date",
-        "guests: "{
-          rooms: "Number",
-          adults: "Number",
+        "guests": "{
+          rooms: Number,
+          adults: Number,
           children: "{
             [
               {
@@ -232,9 +231,9 @@
         }",
         "checkInDate": "Date",
         "checkOutDate": "Date",
-        "guests: "{
-          rooms: "Number",
-          adults: "Number",
+        "guests": "{
+          rooms: Number,
+          adults: Number,
           children: "{
             [
               {
