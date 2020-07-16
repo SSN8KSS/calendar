@@ -69,12 +69,11 @@
 ```
 
 ### Add new booking to a hotel
-  * POST `/api/hotels/:hotelId/`
+  * POST `/api/hotels/`
 
 **Success Status Code:** `202`
 
 **Path Parameters:**
-  * `hotelId` hotel id
 
 **Request Body**: Expects JSON with the following keys.
 
@@ -92,10 +91,10 @@
 
 
 ### Update booking info
-  * PATCH `/api/hotels/:hotelId/`
+  * PATCH `/api/bookings/:bookingId/`
 
 **Path Parameters:**
-  * `hotelId` hotel id
+  * `bookingId` booking id
 
 **Success Status Code:** `203`
 
