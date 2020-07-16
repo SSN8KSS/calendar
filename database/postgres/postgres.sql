@@ -33,7 +33,7 @@ CREATE TABLE bookings (
 );
 
 CREATE TABLE users (
-  userID UUID PRIMARY KEY,
+  userId UUID PRIMARY KEY,
   firstName TEXT NOT NULL,
   lastName TEXT NOT NULL,
   creditCard INT NOT NULL,
@@ -44,6 +44,10 @@ CREATE TABLE users (
   userEmail TEXT NOT NULL,
   userReviews SMALLINT NOT NULL
 );
+
+-- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels.csv' CSV HEADER;
+-- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings.csv' CSV HEADER;
+-- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users.csv' CSV HEADER;
 
 /*
 psql postgres < postgres.sql
