@@ -49,17 +49,17 @@ COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres
 COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings1.csv' CSV HEADER;
 COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users1.csv' CSV HEADER;
 
--- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels2.csv' CSV HEADER;
--- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings2.csv' CSV HEADER;
--- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users2.csv' CSV HEADER;
+COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels2.csv' CSV HEADER;
+COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings2.csv' CSV HEADER;
+COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users2.csv' CSV HEADER;
 
--- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels3.csv' CSV HEADER;
--- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings3.csv' CSV HEADER;
--- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users3.csv' CSV HEADER;
+COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels3.csv' CSV HEADER;
+COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings3.csv' CSV HEADER;
+COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users3.csv' CSV HEADER;
 
--- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels4.csv' CSV HEADER;
--- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings4.csv' CSV HEADER;
--- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users4.csv' CSV HEADER;
+COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels4.csv' CSV HEADER;
+COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings4.csv' CSV HEADER;
+COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users4.csv' CSV HEADER;
 
 /*
 psql postgres < postgres.sql

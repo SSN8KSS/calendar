@@ -4,8 +4,8 @@ CREATE KEYSPACE calendar WITH REPLICATION = {'class' : 'SimpleStrategy', 'replic
 USE calendar;
 
 CREATE TABLE calendar.bookings_by_hotel (
-  bookingId uuid,
-  hotelId uuid,
+  bookingId int,
+  hotelId int,
   bookingService text,
   adults smallint,
   children smallint,
@@ -19,8 +19,8 @@ CREATE TABLE calendar.bookings_by_hotel (
   WITH comment = 'Q1. Find booking info of a hotel';
 
 CREATE TABLE calendar.bookings_by_user (
-  bookingId uuid,
-  bookingHotelId uuid,
+  bookingId int,
+  bookingHotelId int,
   bookingService text,
   adults smallint,
   children smallint,
@@ -34,7 +34,14 @@ CREATE TABLE calendar.bookings_by_user (
 )
   WITH comment = 'Q2. Find booking info of a user';
 
-  /*
+  -- calendar.bookings_by_hotel
+COPY calendar.bookings_by_hotel(bookingId, hotelId, bookingService, adults, children, checkIn, checkOut, nightlyPrice, cleaningPrice, numberReviews) FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvCassandra/bookings_by_hotel1.csv' with header=true and delimiter =',';
+
+
+--  calendar.bookings_by_user
+COPY calendar.bookings_by_user(bookingId, bookingHotelId, bookingService, adults, children, checkIn, checkOut, nightlyPrice, cleaningPrice, creditCard, userID) FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvCassandra/bookings_by_user1.csv' with header=true and delimiter =',';
+
+/*
 // To import schema:
 cqlsh --request-timeout=6000
 cqlsh -e "SOURCE '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/cassandra/cassandra.cql'"
