@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS hotels;
 
 CREATE TABLE hotels (
-  hotelId UUID PRIMARY KEY,
+  hotelId INT PRIMARY KEY,
   hotelName TEXT NOT NULL,
   hotelAddress TEXT NOT NULL,
   nightlyPrice SMALLINT NOT NULL,
@@ -20,8 +20,8 @@ CREATE TABLE hotels (
 );
 
 CREATE TABLE bookings (
-  bookingId UUID PRIMARY KEY,
-  bookingHotelId UUID,
+  bookingId INT PRIMARY KEY,
+  bookingHotelId INT,
   bookingService TEXT NOT NULL,
   adults SMALLINT NOT NULL,
   children SMALLINT NOT NULL,
@@ -33,22 +33,43 @@ CREATE TABLE bookings (
 );
 
 CREATE TABLE users (
-  userId UUID PRIMARY KEY,
+  userId INT PRIMARY KEY,
   firstName TEXT NOT NULL,
   lastName TEXT NOT NULL,
   creditCard INT NOT NULL,
   userAddress TEXT NOT NULL,
   userCity TEXT NOT NULL,
   userCountry TEXT NOT NULL,
-  userZip SMALLINT NOT NULL,
+  userZip INT NOT NULL,
   userEmail TEXT NOT NULL,
   userReviews SMALLINT NOT NULL
 );
 
--- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels.csv' CSV HEADER;
--- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings.csv' CSV HEADER;
--- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users.csv' CSV HEADER;
+COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels1.csv' CSV HEADER;
+COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings1.csv' CSV HEADER;
+COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users1.csv' CSV HEADER;
+
+-- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels2.csv' CSV HEADER;
+-- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings2.csv' CSV HEADER;
+-- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users2.csv' CSV HEADER;
+
+-- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels3.csv' CSV HEADER;
+-- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings3.csv' CSV HEADER;
+-- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users3.csv' CSV HEADER;
+
+-- COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/hotels4.csv' CSV HEADER;
+-- COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/bookings4.csv' CSV HEADER;
+-- COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/csvPostgres/users4.csv' CSV HEADER;
 
 /*
 psql postgres < postgres.sql
+
+psql postgres < /Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/postgres.sql
+
+psql postgres
+
+\list
+
+// To increase memory when running in terminal:
+export NODE_OPTIONS="--max-old-space-size=8192"
 */
