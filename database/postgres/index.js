@@ -18,7 +18,8 @@ const {Pool, Client} = require('pg');
 // });
 
 const client = new Client({
-  user: 'ubuntu',
+  // user: 'spencerng94',
+  user: 'postgres',
   host: 'localhost',
   database: 'postgres',
   // password: '',
