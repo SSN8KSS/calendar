@@ -27,3 +27,6 @@ public/bundle.js
 # db config files
 database/postgres/index.js
 database/cassandra/index.js
+
+# newrelic
+newrelic.js

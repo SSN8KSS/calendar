@@ -33,31 +33,67 @@ const bookings_by_hotel_Generator = (j, start, end, writerNum) => {
     );
   }
   () => writerNum.end();
-  console.log('bookings_by_hotel seeding succesful')
+  console.log(`bookings_by_hotel${j} seeding successful`)
 };
 
-for (var j = 1; j < 5; j++) {
+for (var j = 1; j < 11; j++) {
   var start = 0;
-  var end = 250;
+  var end = 1000000;
   var writerNum = csvWriter();
   var writer1 = csvWriter();
   var writer2 = csvWriter();
   var writer3 = csvWriter();
   var writer4 = csvWriter();
+  var writer5 = csvWriter();
+  var writer6 = csvWriter();
+  var writer7 = csvWriter();
+  var writer8 = csvWriter();
+  var writer9 = csvWriter();
+  var writer10 = csvWriter();
   if (j === 2) {
-    start = 250;
-    end = 500;
+    start = 1000000;
+    end = 2000000;
     writerNum = writer2;
   }
   if (j === 3) {
-    start = 500;
-    end = 750;
+    start = 2000000;
+    end = 3000000;
     writerNum = writer3;
   }
   if (j === 4) {
-    start = 750;
-    end = 1000;
+    start = 3000000;
+    end = 4000000;
     writerNum = writer4;
+  }
+  if (j === 5) {
+    start = 4000000;
+    end = 5000000;
+    writerNum = writer5;
+  }
+  if (j === 6) {
+    start = 5000000;
+    end = 6000000;
+    writerNum = writer6;
+  }
+  if (j === 7) {
+    start = 6000000;
+    end = 7000000;
+    writerNum = writer7;
+  }
+  if (j === 8) {
+    start = 7000000;
+    end = 8000000;
+    writerNum = writer8;
+  }
+  if (j === 9) {
+    start = 8000000;
+    end = 9000000;
+    writerNum = writer9;
+  }
+  if (j === 10) {
+    start = 9000000;
+    end = 10000000;
+    writerNum = writer10;
   }
   bookings_by_hotel_Generator(j, start, end, writerNum);
 }
@@ -85,31 +121,67 @@ const bookings_by_user_Generator = () => {
     );
   }
   () => writerNum.end();
-  console.log('bookings_by_user seeding succesful')
+  console.log(`bookings_by_user${j} seeding successful`)
 };
 
-for (var j = 1; j < 5; j++) {
+for (var j = 1; j < 11; j++) {
   var start = 0;
-  var end = 250;
+  var end = 1000000;
   var writerNum = csvWriter();
   var writer1 = csvWriter();
   var writer2 = csvWriter();
   var writer3 = csvWriter();
   var writer4 = csvWriter();
+  var writer5 = csvWriter();
+  var writer6 = csvWriter();
+  var writer7 = csvWriter();
+  var writer8 = csvWriter();
+  var writer9 = csvWriter();
+  var writer10 = csvWriter();
   if (j === 2) {
-    start = 250;
-    end = 500;
+    start = 1000000;
+    end = 2000000;
     writerNum = writer2;
   }
   if (j === 3) {
-    start = 500;
-    end = 750;
+    start = 2000000;
+    end = 3000000;
     writerNum = writer3;
   }
   if (j === 4) {
-    start = 750;
-    end = 1000;
+    start = 3000000;
+    end = 4000000;
     writerNum = writer4;
+  }
+  if (j === 5) {
+    start = 4000000;
+    end = 5000000;
+    writerNum = writer5;
+  }
+  if (j === 6) {
+    start = 5000000;
+    end = 6000000;
+    writerNum = writer6;
+  }
+  if (j === 7) {
+    start = 6000000;
+    end = 7000000;
+    writerNum = writer7;
+  }
+  if (j === 8) {
+    start = 7000000;
+    end = 8000000;
+    writerNum = writer8;
+  }
+  if (j === 9) {
+    start = 8000000;
+    end = 9000000;
+    writerNum = writer9;
+  }
+  if (j === 10) {
+    start = 9000000;
+    end = 10000000;
+    writerNum = writer10;
   }
   bookings_by_user_Generator(j, start, end, writerNum);
 }
