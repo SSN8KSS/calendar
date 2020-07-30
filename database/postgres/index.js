@@ -23,7 +23,7 @@ const client = new Client({
   host: 'localhost',
   // database: 'postgres',
   database: 'calendar',
-  // password: '',
+  password: 'password',
   port: '5432',
 });
 client.connect();
