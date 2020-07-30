@@ -54,50 +54,50 @@ CREATE TABLE bookings (
 CREATE INDEX hotelIdSerialIndex ON bookings(bookingHotelId);
 
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels1.csv' WITH CSV HEADER DELIMITER ',';
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings1.csv' CSV HEADER DELIMITER ',';
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users1.csv' CSV HEADER DELIMITER ',';
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels1.csv' WITH CSV HEADER DELIMITER ',';
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings1.csv' CSV HEADER DELIMITER ',';
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users1.csv' CSV HEADER DELIMITER ',';
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels2.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings2.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users2.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels2.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings2.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users2.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels3.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings3.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users3.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels3.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings3.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users3.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels4.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings4.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users4.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels4.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings4.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users4.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels5.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings5.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users5.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels5.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings5.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users5.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels6.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings6.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users6.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels6.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings6.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users6.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels7.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings7.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users7.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels7.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings7.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users7.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels8.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings8.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users8.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels8.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings8.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users8.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels9.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings9.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users9.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels9.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings9.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users9.csv' CSV HEADER;
 
-COPY hotels FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/hotels10.csv' CSV HEADER;
-COPY bookings FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/bookings10.csv' CSV HEADER;
-COPY users FROM '/Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/users10.csv' CSV HEADER;
+COPY hotels FROM '/home/ubuntu/projects/calendar/database/postgres/hotels10.csv' CSV HEADER;
+COPY bookings FROM '/home/ubuntu/projects/calendar/database/postgres/bookings10.csv' CSV HEADER;
+COPY users FROM '/home/ubuntu/projects/calendar/database/postgres/users10.csv' CSV HEADER;
 
 /*
 psql postgres < postgres.sql
 
-psql postgres < /Users/spencerng94/Desktop/HRSF_Files/HRSF_128/SDC/calendar/database/postgres/postgres.sql
+psql postgres < /home/ubuntu/projects/calendar/database/postgres/postgres.sql
 
 psql postgres
 
